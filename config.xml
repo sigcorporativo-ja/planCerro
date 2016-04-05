@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    	<widget xmlns   = "http://www.w3.org/ns/widgets"
+		xmlns:gap   = "http://phonegap.com/ns/1.0"
+		id          = "es.juntadeandalucia.mapea4.planromero16"
+		versionCode = "100" 
+		version     = "1.0.0" >
+
+	<name>Plan Romero 2016</name>
+	<description>
+		Plan Romero 2016
+	</description>
+	<author email="l-dirsigc.chap@juntadeandalucia.es" href="http://www.juntadeandalucia.es">
+		Junta de Andalucía
+	</author>
+	<content src="index.html" />
+	<access origin="*" />
+	<icon src="resources/icon.png" /><!--Adaptar a resoluciones?-->
+
+	<preference name="SplashScreen" value="screen" />
+	<preference name="SplashScreenDelay" value="10000" />
+	<preference name="AutoHideSplashScreen" value="false" />
+	<preference name="fullscreen" value="false" />
+	<preference name="phonegap-version" value="cli-5.2.0" />
+
+<!-- PERMISOS -->	
+	<preference name="permissions" value="none"/>	
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/network"/>
+
+<!-- SPLASH Android -->
+	<gap:splash src="resources/Android/screen.png" /> <!--DEFAULT-->
+	<gap:splash src="resources/Android/screen.png" gap:platform="android" gap:qualifier="port-ldpi" />
+	<gap:splash src="resources/Android/screen.png" gap:platform="android" gap:qualifier="port-mdpi" />
+	<gap:splash src="resources/Android/screen.png" gap:platform="android" gap:qualifier="port-hdpi" />
+	<gap:splash src="resources/Android/screen.png" gap:platform="android" gap:qualifier="port-xhdpi" />
+	<gap:splash src="resources/Android/screen_land.png" gap:platform="android" gap:qualifier="land-ldpi" />
+	<gap:splash src="resources/Android/screen_land.png" gap:platform="android" gap:qualifier="land-mdpi" />
+	<gap:splash src="resources/Android/screen_land.png" gap:platform="android" gap:qualifier="land-hdpi" />
+	<gap:splash src="resources/Android/screen_land.png" gap:platform="android" gap:qualifier="land-xhdpi" />
+<!-- SPLASH iOS -->
+	<gap:splash src="resources/iOS/screen.png" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="resources/iOS/screen.png" gap:platform="ios" width="640" height="960" />
+	<!-- iPhone 5 / iPod Touch (5th Generation) -->
+	<gap:splash src="res/screen.png" gap:platform="ios" width="640" height="1136" />
+	<!-- iPhone 6 -->
+	<gap:splash src="resources/iOS/screen.png" gap:platform="ios" width="750" height="1334" />
+	<gap:splash src="resources/iOS/screen.png" gap:platform="ios" width="1242" height="2208" />
+	<gap:splash src="resources/iOS/screen_land.png" gap:platform="ios" width="2208" height="1242" />
+	<!-- iPad -->
+	<gap:splash src="resources/iOS/screen.png" gap:platform="ios" width="768" height="1024" />
+	<gap:splash src="resources/iOS/screen_land.png" gap:platform="ios" width="1024" height="768" />
+	<!-- Retina iPad -->
+	<gap:splash src="resources/iOS/screen.png" gap:platform="ios" width="1536" height="2048" />
+	<gap:splash src="resources/iOS/screen_land.png" gap:platform="ios" width="2048" height="1536" />
+
+<!-- PLUGINS -->
+	<gap:plugin name="cordova-plugin-geolocation" source="npm" version="1.0.1" />
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" version="1.0.1" />
+	<gap:plugin name="cordova-plugin-splashscreen" source="npm" version="2.1.0" />
+	<gap:plugin name="cordova-plugin-statusbar" source="npm" version="1.0.1" />
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
+
+	
+<!-- CONFIGS -->	
+	<gap:config-file platform="ios" parent="UIStatusBarHidden">
+	    <true/>
+	</gap:config-file>
+	
+	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
+	    <false/>
+	</gap:config-file>
+</widget>

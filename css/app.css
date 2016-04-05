@@ -1,0 +1,83 @@
+.ui-header .ui-title { 
+	margin-left: 1em; 
+	margin-right: 1em;
+}
+.ui-btn{text-align: left}
+.ui-mini {font-size: 12px}
+
+/*iconos de botones más cuadrados*/
+[class*=ui-btn-icon-]:after{
+  -webkit-border-radius: .4em !important;
+  border-radius: .4em !important;
+}
+
+    
+/*sin padding a todas menos #home*/
+.ui-page:not(#home) .ui-content{padding:0}    /*[#ruta, #camino, #gps, #diario, #horas, #toponimo]*/
+
+/*en los bloques quito el borde y el margen*/
+[class*=ui-grid-] [class*=ui-block-]>.ui-btn, 
+[class*=ui-grid-] [class*=ui-block-]>.ui-select,  
+[class*=ui-grid-] [class*=ui-block-]>.ui-checkbox,  
+[class*=ui-grid-] [class*=ui-block-]>.ui-radio,  
+[class*=ui-grid-] [class*=ui-block-]>button.ui-btn-inline,  
+[class*=ui-grid-] [class*=ui-block-]>button.ui-btn-icon-notext,
+.ui-collapsible-inset, .ui-collapsible-set,
+.ui-content .ui-listview-inset, .ui-panel-inner>.ui-listview-inset /*listas*/
+{
+  margin: 0;
+  border: 0;
+}
+
+/*paginas con dos combos*/
+#ruta .ui-block-a, #horas .ui-block-a {width:60%!important}
+#ruta .ui-block-b, #horas .ui-block-b {width:40%!important}
+.noinfo {
+	display: none;
+	padding: 1em;
+}
+
+
+.subheader {
+  text-align: center;
+  margin-top: -5px;
+  margin-bottom: 6px;
+  font-size: smaller;
+  font-weight: normal;
+}
+/** content a 100% height para que el mapa ocupe toda la pantalla */
+html,
+body,
+.ui-page {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ui-page,
+.ui-page * {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.ui-page .ui-content {
+  height: inherit;
+}
+
+/***elimino estilos de seleccionado y activo ya que no interesan****/
+.ui-focus,
+.ui-btn:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.ui-btn-active {
+ background-image: none !important;
+ background: none !important;
+ border: none !important;
+ color: #000 !important; 
+}
+*{
+	text-shadow: none !important;
+}

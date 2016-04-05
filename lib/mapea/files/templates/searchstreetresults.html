@@ -1,0 +1,13 @@
+<div class="results-panels">
+   {{#if containtResult}}
+   <div class="results">
+      {{#each docs}}
+      <div id="{{streetName}}" class="result">
+         {{streetType}} {{streetName}}, {{streetNumber}}</br>
+         {{localityName}} ({{cityName}})
+      </div>
+      {{/each}}
+   </div>
+   {{else}}
+   <span class="partial">No se han encontrado resultados para la búsqueda "{{search}}".</span> {{/if}}
+</div>
