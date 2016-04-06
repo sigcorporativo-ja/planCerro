@@ -13,7 +13,7 @@ var getColor 		= "http://ws198.juntadeandalucia.es/desaprom/rest/color/"; //NO U
 /**/
 var zoomToPoint = 12;
 var updateGPS = 300; //en segundos
-var timeout = 15; //en segundos. Se usa para detectar si hay algún problema con los servicios no controlado
+var timeout = 10; //en segundos. Se usa para detectar si hay algún problema con los servicios no controlado
 M.proxy(false);
 /*********************** MENSAJES DE ERROR NO CONTROLADO **********************/
 var noPosicion 		= "No existe posición para la hermandad seleccionada";
