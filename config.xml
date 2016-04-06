@@ -21,6 +21,7 @@
 	<preference name="AutoHideSplashScreen" value="false" />
 	<preference name="fullscreen" value="false" />
 	<preference name="phonegap-version" value="cli-5.2.0" />
+	<preference name="loadUrlTimeoutValue" value="15000" />
 
 <!-- PERMISOS -->	
 	<preference name="permissions" value="none"/>	
