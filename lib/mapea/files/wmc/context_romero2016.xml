@@ -61,7 +61,7 @@
 				<Format current="1">image/png; mode=8bit</Format>
 			</FormatList>
 			<Extension>
-				<ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+				<ol:transparent xmlns:ol="http://openlayers.org/context">false</ol:transparent>
 				<ol:isBaseLayer xmlns:ol="http://openlayers.org/context">true</ol:isBaseLayer>
 				<ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
 				<ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>

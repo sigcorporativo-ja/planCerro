@@ -330,11 +330,11 @@ function pintarGPS(hermandad){
 	}
 }
 function bindEvents(){
-	$(document).on('mobileinit',function(){
+	/*$(document).on('mobileinit',function(){
 	  $.mobile.changePage.defaults.changeHash = false;
 	  $.mobile.hashListeningEnabled = false;
 	  $.mobile.pushStateEnabled = false;
-	});	
+	});*/	
 	$(document).on("pagechange", function (e, data) {
   	//JGL: lo hago aquí porque si no OL3 no dibuja al no estar aún el div del mapa "pintado"
   	//aunque esto conlleva que se vean los cambios sobre las pantallas (título, mapa,etc...)
