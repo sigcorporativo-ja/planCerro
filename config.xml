@@ -22,6 +22,7 @@
 	<!--<preference name="AutoHideSplashScreen" value="false" />-->
 	<!--<preference name="fullscreen" value="false" />--> 
 	<!--<preference name="phonegap-version" value="cli-5.2.0" />-->
+	<preference name="android-build-tool" value="gradle" />
 		
 
 <!-- PERMISOS -->	
@@ -61,7 +62,7 @@
 	<gap:plugin name="cordova-plugin-splashscreen" source="npm" version="2.1.0" />
 	<gap:plugin name="cordova-plugin-statusbar" source="npm" version="1.0.1" />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
-	<gap:plugin name="cordova-plugin-crosswalk-webview" source="npm" version="1.6.0" />
+	<gap:plugin name="cordova-plugin-crosswalk-webview" source="npm" version="1.6.1" />
 
 	
 <!-- CONFIGS -->	
