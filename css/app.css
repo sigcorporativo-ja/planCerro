@@ -1,3 +1,6 @@
+*{
+  text-shadow: none !important;
+}
 .ui-header .ui-title { 
 	margin-left: 1em; 
 	margin-right: 1em;
@@ -27,6 +30,9 @@
 {
   margin: 0;
   border: 0;
+}
+.ui-listview .ui-li-aside{
+  top:0.1em;
 }
 
 /*paginas con dos combos*/
@@ -70,8 +76,8 @@ body,
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-     background-image: none !important;
- background: none !important;
+    background-image: none !important;
+    background: none !important;
 }
 .ui-btn-active {
  background-image: none !important;
@@ -79,9 +85,7 @@ body,
  border: none !important;
  color: #000 !important; 
 }
-*{
-	text-shadow: none !important;
-}
+
 
 /*GENERAR THEME*/
 .ui-content {
