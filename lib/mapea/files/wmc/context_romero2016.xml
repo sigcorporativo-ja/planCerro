@@ -113,14 +113,14 @@
 			<Title>toporaster10</Title>
 			<SRS>EPSG:25830</SRS>
 			<FormatList>
-				<Format current="1">image/jpeg</Format>
+				<Format current="1">image/png; mode=8bit</Format>
 			</FormatList>
 			<Extension>
 				<ol:opacity xmlns:ol="http://openlayers.org/context">0.9</ol:opacity>
 				<ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
 				<ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
 				<ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
-				<ol:singleTile xmlns:ol="http://openlayers.org/context">true</ol:singleTile>
+				<ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
 			</Extension>
 			<StyleList>
 				<Style current="1">

@@ -36,6 +36,9 @@
 	display: none;
 	padding: 1em;
 }
+#home .ui-content {
+  background-color: #c8be89;
+}
 
 
 .subheader {
@@ -80,4 +83,21 @@ body,
 }
 *{
 	text-shadow: none !important;
+}
+
+/*GENERAR THEME*/
+.ui-page-theme-a .ui-bar-inherit{
+  background-color: #a5924c;
+  color: beige;
+  border-color: #a5924c;
+}
+.ui-page-theme-a .ui-btn{
+  background-color: beige;
+}
+.ui-btn-icon-left:after, 
+.ui-btn-icon-right:after, 
+.ui-btn-icon-top:after, 
+.ui-btn-icon-bottom:after, 
+.ui-btn-icon-notext:after {
+  background-color: #a5924c;
 }

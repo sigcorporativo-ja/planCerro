@@ -280,8 +280,9 @@ function updateLastPos(){
 }
 
 function pintarGPS(hermandad){
-	if(hermandad!=null){
+	if(hermandad!=null){ //pos si se quiere sólo pintar una hermandad
 		features = vectorSourceGPS.getFeatures();
+		vectorSourceGPS.clear();
 		$.grep(features, function(f) {
 			h=hermandades.getByField('etiqueta_gps', f.get('name'));
 			return (h.codigo_hermandad === hermandad);
@@ -326,8 +327,6 @@ function pintarGPS(hermandad){
 			}
 		});
 		mapajsGPS.getMapImpl().addLayer(lyGPS);
-	}else{
-		mapajsGPS.setBbox(bbox);	
 	}
 }
 function bindEvents(){
@@ -409,11 +408,11 @@ function bindEvents(){
 
 $(document).ready(function() {
 	bindEvents();
-    //TODO: quitar splash y cargo info general en 2º plano
     cargarDias();
     cargarHermandades();
     cargarPasos();
     cargarHermandadesRuta();
+    navigator.splashscreen.hide();
 });
 
 function showDialog(message, title, severity) {
