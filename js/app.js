@@ -330,15 +330,8 @@ function pintarGPS(hermandad){
 	}
 }
 function bindEvents(){
-	/*$(document).on('mobileinit',function(){
-	  $.mobile.changePage.defaults.changeHash = false;
-	  $.mobile.hashListeningEnabled = false;
-	  $.mobile.pushStateEnabled = false;
-	});*/	
 	$(document).on("pagechange", function (e, data) {
-  	//JGL: lo hago aquí porque si no OL3 no dibuja al no estar aún el div del mapa "pintado"
-  	//aunque esto conlleva que se vean los cambios sobre las pantallas (título, mapa,etc...)
-	  	if ($.type(data.toPage) == "object"){
+  	  	if ($.type(data.toPage) == "object"){
 	  		switch(data.toPage[0].id) {
 	  			case 'ruta':
 		  			pintarRuta($("#dropHermandadRuta").val(),$("#dropDiaRuta").val());
@@ -364,7 +357,6 @@ function bindEvents(){
 	  		}
 	  	}
   	});
-
 	$("#dropHermandadCamino").on("change", function() {
 		cargarCamino($(this).val()).done(function(){$("#listCamino").collapsibleset().trigger("create");});
 	});

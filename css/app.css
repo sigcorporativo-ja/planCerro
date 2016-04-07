@@ -70,6 +70,8 @@ body,
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
+     background-image: none !important;
+ background: none !important;
 }
 .ui-btn-active {
  background-image: none !important;
@@ -90,9 +92,6 @@ body,
   color: beige;
   border-color: #a5924c;
 }
-.ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head+body .ui-btn.ui-btn-a:visited
-
-
 .ui-page-theme-a .ui-btn, .ui-page-theme-a .ui-btn:visited{
   background-color: beige;
 }
