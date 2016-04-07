@@ -61,7 +61,7 @@
 	<gap:plugin name="cordova-plugin-splashscreen" source="npm" version="2.1.0" />
 	<gap:plugin name="cordova-plugin-statusbar" source="npm" version="1.0.1" />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
-	<gap:plugin name="cordova-plugin-crosswalk-webview" source="npm" />
+	<gap:plugin name="cordova-plugin-crosswalk-webview" source="npm" version="1.6.0" />
 
 	
 <!-- CONFIGS -->	
