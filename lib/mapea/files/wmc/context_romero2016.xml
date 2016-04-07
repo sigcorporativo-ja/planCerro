@@ -99,7 +99,7 @@
 					<Title>Estilo de la leyenda</Title>
 				</Style>
 			</StyleList>
-			<sld:MinScaleDenominator xmlns:sld="http://www.opengis.net/sld">730.78136246</sld:MinScaleDenominator>
+			<!--<sld:MinScaleDenominator xmlns:sld="http://www.opengis.net/sld">730.78136246</sld:MinScaleDenominator>-->
 			<!--<sld:MaxScaleDenominator xmlns:sld="http://www.opengis.net/sld">1999.9989179605843128</sld:MaxScaleDenominator>-->
 			<sld:MaxScaleDenominator xmlns:sld="http://www.opengis.net/sld">3500</sld:MaxScaleDenominator>
 		</Layer>
