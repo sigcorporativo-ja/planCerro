@@ -406,7 +406,21 @@ function bindEvents(){
 	});
 }
 
-//$(document).ready(function() {
+$(document).ready(function() {
+    // are we running in native app or in a browser?
+    window.isphone = false;
+    if(document.URL.indexOf("http://") === -1 
+        && document.URL.indexOf("https://") === -1) {
+        window.isphone = true;
+    }
+
+    if( window.isphone ) {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    } else {
+        onDeviceReady();
+    }
+});
+
 function onDeviceReady(){
     bindEvents();
     cargarDias();
@@ -414,7 +428,7 @@ function onDeviceReady(){
     cargarPasos();
     cargarHermandadesRuta();
     navigator.splashscreen.hide();
-});
+};
 
 function showDialog(message, title, severity) {
 	if (message && message!=null && message!=''){
