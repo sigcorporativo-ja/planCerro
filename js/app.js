@@ -406,8 +406,9 @@ function bindEvents(){
 	});
 }
 
-$(document).ready(function() {
-	bindEvents();
+//$(document).ready(function() {
+function onDeviceReady(){
+    bindEvents();
     cargarDias();
     cargarHermandades();
     cargarPasos();
