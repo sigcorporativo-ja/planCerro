@@ -36,10 +36,6 @@
 	display: none;
 	padding: 1em;
 }
-#home .ui-content {
-  background-color: #c8be89;
-}
-
 
 .subheader {
   text-align: center;
@@ -86,6 +82,9 @@ body,
 }
 
 /*GENERAR THEME*/
+.ui-content {
+  background-color: #c8be89;
+}
 .ui-page-theme-a .ui-bar-inherit{
   background-color: #a5924c;
   color: beige;

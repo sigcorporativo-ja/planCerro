@@ -330,7 +330,11 @@ function pintarGPS(hermandad){
 	}
 }
 function bindEvents(){
-		
+	$(document).on('mobileinit',function(){
+	  $.mobile.changePage.defaults.changeHash = false;
+	  $.mobile.hashListeningEnabled = false;
+	  $.mobile.pushStateEnabled = false;
+	});	
 	$(document).on("pagechange", function (e, data) {
   	//JGL: lo hago aquí porque si no OL3 no dibuja al no estar aún el div del mapa "pintado"
   	//aunque esto conlleva que se vean los cambios sobre las pantallas (título, mapa,etc...)
@@ -422,12 +426,13 @@ $(document).ready(function() {
 });
 
 function onDeviceReady(){
-    bindEvents();
-    cargarDias();
-    cargarHermandades();
-    cargarPasos();
-    cargarHermandadesRuta();
-    navigator.splashscreen.hide();
+    $.when.apply($,[cargarDias(), 
+		    cargarHermandades(),  
+		    cargarPasos(), 
+		    cargarHermandadesRuta()]).then(function(){
+		      navigator.splashscreen.hide(); //JGL: oculto splash cuando se han cargado todos los datos básicos
+		    });
+    bindEvents();   
 };
 
 function showDialog(message, title, severity) {
