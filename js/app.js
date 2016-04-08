@@ -442,3 +442,6 @@ function showDialog(message, title, severity) {
       });
     }
    };
+function showInfo(){
+	showDialog(htmlAcercade,'Acerca de','info');
+}

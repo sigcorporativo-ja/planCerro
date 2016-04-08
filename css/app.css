@@ -1,6 +1,8 @@
 *{
   text-shadow: none !important;
 }
+a:link            {color:#a5924c; font-weight: bold}
+a:visited    {color:#a5924c; font-weight: bold}
 .ui-header .ui-title { 
 	margin-left: 1em; 
 	margin-right: 1em;
@@ -105,4 +107,11 @@ body,
 .ui-btn-icon-bottom:after, 
 .ui-btn-icon-notext:after {
   background-color: #a5924c;
+}
+.m-dialog.info div.m-message{
+  text-align: center;
+}
+.m-dialog.info div.m-button>button, .m-dialog.info div.m-title {
+    background-color: #a5924c;
+    color: beige;
 }
