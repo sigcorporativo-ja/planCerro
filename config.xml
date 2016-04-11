@@ -25,7 +25,6 @@
 	<preference name="android-installLocation" value="auto" />	
 	<preference name="phonegap-version" value="cli-5.2.0" />
 
-
 <!-- PERMISOS -->	
 	<preference name="permissions" value="none"/>	
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
