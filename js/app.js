@@ -438,9 +438,10 @@ function showDialog(message, title, severity) {
       	 M.dialog.remove();
          dialog = $(html);
          var okButton = dialog.find('div.m-button > button');
-         $(okButton).on("click", function () {         	
+         $(okButton).on("click", function () { 
+         	alert(device.platform.toUpperCase());        	
      		if (device.platform.toUpperCase().indexOf('IOS')==-1
-     			&&navigator && navigator.app 
+     			&& navigator && navigator.app 
      			&& title.toUpperCase().indexOf('INESPERADO')>-1){
          		navigator.app.exitApp();
 			}else{
