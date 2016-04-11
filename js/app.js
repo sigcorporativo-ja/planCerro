@@ -422,7 +422,8 @@ function onDeviceReady(){
 		    cargarHermandades(),  
 		    cargarPasos(), 
 		    cargarHermandadesRuta()]).then(function(){
-		      navigator.splashscreen.hide(); //JGL: oculto splash cuando se han cargado todos los datos básicos
+		      //JGL: oculto splash cuando se han cargado todos los datos básicos o ha dado error
+		      navigator.splashscreen.hide(); 
 		    });
     bindEvents();   
 };
