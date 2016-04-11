@@ -446,7 +446,7 @@ function showDialog(message, title, severity) {
 					}else if(navigator.device){
 						navigator.device.exitApp();
 					}
-				}catch{
+				}catch(){
 					dialog.remove();
 				}			
          	}else{
