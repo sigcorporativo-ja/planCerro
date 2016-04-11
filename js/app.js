@@ -37,7 +37,7 @@ function getInfo(url,filtro){
 		//Captura de error genérica para todas las llamadas
 		console.error(e.peticion, e.error);		
 		if (e.statusText){ //ES UN ERROR NO CONTROLADO
-			showDialog(errInesperado,'ERROR','error');
+			showDialog(errInesperado,'ERROR INESPERADO','error');
 		}
 	}).always(function(){
 		$.mobile.loading().hide();
@@ -438,7 +438,13 @@ function showDialog(message, title, severity) {
       	 M.dialog.remove();
          dialog = $(html);
          var okButton = dialog.find('div.m-button > button');
-         $(okButton).on("click", function () { dialog.remove(); });
+         $(okButton).on("click", function () { 
+         	if (window.isphone&& title.toUpperCase().indexOf('INESPERADO')>-1){
+				navigator.app.exitApp();
+         	}else{
+         		dialog.remove(); 
+         	}
+         });
          $(document.body).append(dialog);
       });
     }

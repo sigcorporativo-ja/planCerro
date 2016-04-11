@@ -17,5 +17,5 @@ var timeout = 10; //en segundos. Se usa para detectar si hay algún problema con
 M.proxy(false);
 /*********************** MENSAJES DE ERROR NO CONTROLADO EN LOS SERVICIOS **********************/
 var noPosicion 		= "No existe posición para la hermandad seleccionada";
-var errInesperado 	= "Ha ocurrido un error inesperado";
+var errInesperado 	= "Ha ocurrido un error inesperado y la aplicación se cerrará";
 var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan Romero<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='http://www.juntadeandalucia.es/organismos/justiciaeinterior.html' target='_blank'>Consejería de Justicia e Interior</a>";
