@@ -18,9 +18,9 @@ hermandades.add = function (h){
 /*************************************/
 
 function getInfo(url,filtro){
+	$.mobile.loading().show();
 	if (filtro===undefined) filtro={};
 	filtro.apikey=apikey;
-	$.mobile.loading().show();
 	return $.ajax({
 		dataType: "jsonp",
 		url: url,
@@ -421,7 +421,7 @@ function onDeviceReady(){
     $.when.apply($,[cargarDias(), 
 		    cargarHermandades(),  
 		    cargarPasos(), 
-		    cargarHermandadesRuta()]).then(function(){
+		    cargarHermandadesRuta()]).always(function(){
 		      //JGL: oculto splash cuando se han cargado todos los datos básicos o ha dado error
 		      navigator.splashscreen.hide(); 
 		    });
