@@ -13,7 +13,7 @@
 		Junta de Andalucía
 	</author>
 	<content src="index.html" />
-	<allow-navigation href="*" /><!--<access origin="*" />-->
+	<access origin="*" />
 	<icon src="resources/icon.png" /><!--Adaptar a resoluciones?-->
 
 	<preference name="SplashScreen" value="screen" />
