@@ -441,12 +441,12 @@ function showDialog(message, title, severity) {
          $(okButton).on("click", function () {         	
      		if (navigator && title.toUpperCase().indexOf('INESPERADO')>-1){
          		try{
-	         		if (navigator.app)
+	         		if (navigator.app){
 						navigator.app.exitApp();
-					else if(navigator.device){
+					}else if(navigator.device){
 						navigator.device.exitApp();
 					}
-				catch{
+				}catch{
 					dialog.remove();
 				}			
          	}else{
