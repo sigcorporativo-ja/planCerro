@@ -18,4 +18,4 @@ M.proxy(false);
 /*********************** MENSAJES DE ERROR NO CONTROLADO EN LOS SERVICIOS **********************/
 var noPosicion 		= "No existe posición para la hermandad seleccionada";
 var errInesperado 	= "Ha ocurrido un error inesperado. Vuelva a ejecutar la aplicación";
-var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan Romero<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='javascript:cordova.InAppBrowser.open('http://www.juntadeandalucia.es/organismos/justiciaeinterior.html','_system');'>Consejería de Justicia e Interior</a>";
+var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan Romero<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='#' onclick='javascript:cordova.InAppBrowser.open('http://www.juntadeandalucia.es/organismos/justiciaeinterior.html','_system');'>Consejería de Justicia e Interior</a>";
