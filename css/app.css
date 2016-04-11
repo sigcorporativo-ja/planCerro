@@ -1,7 +1,11 @@
 *{
   text-shadow: none !important;
 }
-a:link       {color:#a5924c; font-weight: bold}
+:not(input):not(textarea):not(.m-mapea-container) {
+   -webkit-user-select: none;
+   -webkit-touch-callout: none; 
+}
+a:link            {color:#a5924c; font-weight: bold}
 a:visited    {color:#a5924c; font-weight: bold}
 .ui-header .ui-title { 
 	margin-left: 1em; 
