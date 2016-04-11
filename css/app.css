@@ -1,11 +1,7 @@
 *{
   text-shadow: none !important;
 }
-*:not(input):not(textarea) {
-   -webkit-user-select: none; /* disable selection/Copy of UIWebView */
-   -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
-}  
-a:link            {color:#a5924c; font-weight: bold}
+a:link       {color:#a5924c; font-weight: bold}
 a:visited    {color:#a5924c; font-weight: bold}
 .ui-header .ui-title { 
 	margin-left: 1em; 
