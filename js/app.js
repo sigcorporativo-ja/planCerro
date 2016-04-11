@@ -438,13 +438,17 @@ function showDialog(message, title, severity) {
       	 M.dialog.remove();
          dialog = $(html);
          var okButton = dialog.find('div.m-button > button');
-         $(okButton).on("click", function () { 
-         	if (navigator && title.toUpperCase().indexOf('INESPERADO')>-1){
-         		if (navigator.app)
-					navigator.app.exitApp();
-				else if(navigator.device){
-					navigator.device.exitApp();
-				}
+         $(okButton).on("click", function () {         	
+     		if (navigator && title.toUpperCase().indexOf('INESPERADO')>-1){
+         		try{
+	         		if (navigator.app)
+						navigator.app.exitApp();
+					else if(navigator.device){
+						navigator.device.exitApp();
+					}
+				catch{
+					dialog.remove();
+				}			
          	}else{
          		dialog.remove(); 
          	}
