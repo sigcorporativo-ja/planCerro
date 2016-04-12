@@ -1,4 +1,4 @@
-var apikey="123456";
+var apikey="pl4n06";
 /************************************** SERVICIOS ****************************************/
 var getHermandades 	= "http://ws199.juntadeandalucia.es/prom/rest/hermandades/";
 var getDias 		= "http://ws199.juntadeandalucia.es/prom/rest/fechas/";
