@@ -1,15 +1,15 @@
 var apikey="pl4n06";
 /************************************** SERVICIOS ****************************************/
-var getHermandades 	= "http://ws199.juntadeandalucia.es/prom/rest/hermandades/";
-var getDias 		= "http://ws199.juntadeandalucia.es/prom/rest/fechas/";
-var getRutas 		= "http://ws199.juntadeandalucia.es/prom/rest/ruta/";
-var getFechas 		= "http://ws199.juntadeandalucia.es/prom/rest/fechas/";
-var getCamino 		= "http://ws199.juntadeandalucia.es/prom/rest/camino/";
-var getPasos 		= "http://ws199.juntadeandalucia.es/prom/rest/pasos/";
-var getFechasPaso 	= "http://ws199.juntadeandalucia.es/prom/rest/fechas/paso/";
-var getHoras 		= "http://ws199.juntadeandalucia.es/prom/rest/horario/";
-var getGPS		= "http://ws199.juntadeandalucia.es/prom/rest/gps/";
-var getColor 		= "http://ws199.juntadeandalucia.es/prom/rest/color/"; //NO USADO
+var getHermandades 	= "https://ws199.juntadeandalucia.es/prom/rest/hermandades/";
+var getDias 		= "https://ws199.juntadeandalucia.es/prom/rest/fechas/";
+var getRutas 		= "https://ws199.juntadeandalucia.es/prom/rest/ruta/";
+var getFechas 		= "https://ws199.juntadeandalucia.es/prom/rest/fechas/";
+var getCamino 		= "https://ws199.juntadeandalucia.es/prom/rest/camino/";
+var getPasos 		= "https://ws199.juntadeandalucia.es/prom/rest/pasos/";
+var getFechasPaso 	= "https://ws199.juntadeandalucia.es/prom/rest/fechas/paso/";
+var getHoras 		= "https://ws199.juntadeandalucia.es/prom/rest/horario/";
+var getGPS			= "https://ws199.juntadeandalucia.es/prom/rest/gps/";
+var getColor 		= "https://ws199.juntadeandalucia.es/prom/rest/color/"; //NO USADO
 /**/
 var zoomToPoint = 12;
 var updateGPS = 300; //en segundos
