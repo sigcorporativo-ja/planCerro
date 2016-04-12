@@ -241,7 +241,8 @@ function pintarRuta(hermandad, dia){
 
 			mapajsRuta.setBbox(vectorSourceRuta.getExtent());
 		}else{
-			console.error('el trayecto seleccionado no tiene elementos');
+			//JGL: no debería ocurrir
+			showDialog('El trayecto seleccionado no tiene elementos','INFORMACIÓN','warning');
 		}
 	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
 }
@@ -439,7 +440,7 @@ function showDialog(message, title, severity) {
          dialog = $(html);
          var okButton = dialog.find('div.m-button > button');
          $(okButton).on("click", function () { 
-         	if (navigator && !/iPad|iPhone|iPod/.test(navigator.userAgent)
+         	if (navigator.app && !/iPad|iPhone|iPod/.test(navigator.userAgent)
      			&& title.toUpperCase().indexOf('INESPERADO')>-1){
          		navigator.app.exitApp();
 			}else{

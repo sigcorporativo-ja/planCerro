@@ -43,9 +43,12 @@
 <!-- SPLASH iOS -->
 	<!-- iPhone and iPod touch -->
 	<splash src="resources/iOS/screen.png" platform="ios" width="320" height="480" />
+	<splash src="resources/iOS/screen_land.png" platform="ios" width="480" height="320" />
 	<splash src="resources/iOS/screen.png" platform="ios" width="640" height="960" />
+	<splash src="resources/iOS/screen_land.png" platform="ios" width="960" height="640" />
 	<!-- iPhone 5 / iPod Touch (5th Generation) -->
 	<splash src="resources/iOS/screen.png" platform="ios" width="640" height="1136" />
+	<splash src="resources/iOS/screen_land.png" platform="ios" width="1136" height="640" />
 	<!-- iPhone 6 -->
 	<splash src="resources/iOS/screen.png" platform="ios" width="750" height="1334" />
 	<splash src="resources/iOS/screen.png" platform="ios" width="1242" height="2208" />
