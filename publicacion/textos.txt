@@ -4,14 +4,15 @@ Plan Romero 2016
 
 Descripción breve (80)
 ======================
-Recorridos y GPS Hermandades
+Recorrido de las Hermandades del Rocío 2016, posición real de 30 de ellas.
 
 
 Descripción completa (4000)
 ===========================
-APP para el consultar toda la información de las hermandades de El Rocío por los caminos de peregrinación en la Romería de Pentecostés, con datos de los itinerarios que recorren las Hermandades, lugares de paso de las Hermandades, hermandades en peregrinación por díay para el seguimiento en tiempo real a partir de dispositivos GPS. Las hermandades con seguimiento GPS son en orden alfabético: Ayamonte, Bonares, Cerro del Águila, Córdoba, Écija, Emigrantes, Escacena del Campo, Estepona, Gibraleón, Huelva, Isla Crisitina, Jerez de la Frontera, La Línea de la Concepción, Lebrija, Los Palacios y Villafranca, Macarena, Mairena del Aljarafe, Málaga La Caleta, Málaga La Real, Olivares, Osuna, Puerto Real, El Puerto de Santa María, Rota, Sanlúcar de Barrameda, Sevilla El Salvador, Sevilla Sur, Triana, Utrera y Valverde del Camino. El Plan Romero 2016 es un plan de emergencia ante posibles riesgos por la concentración de personas y desplazamientos producidos con motivo de la Romería de El Rocío.
+El Plan Romero 2016 es un plan de emergencia ante posibles riesgos por la concentración de personas y desplazamientos producidos con motivo de la Romería de El Rocío. Por ello, se ha desarrollado esta APP para la consulta de toda la información de las hermandades, con datos de los itinerarios que recorren, lugares de paso, hermandades en peregrinación, y seguimiento en tiempo real a partir de dispositivos GPS. Las hermandades con seguimiento GPS son, en orden alfabético: Ayamonte, Bonares, Cerro del Águila, Córdoba, Écija, Emigrantes, Escacena del Campo, Estepona, Gibraleón, Huelva, Isla Crisitina, Jerez de la Frontera, La Línea de la Concepción, Lebrija, Los Palacios y Villafranca, Macarena, Mairena del Aljarafe, Málaga La Caleta, Málaga La Real, Olivares, Osuna, Puerto Real, El Puerto de Santa María, Rota, Sanlúcar de Barrameda, Sevilla El Salvador, Sevilla Sur, Triana, Utrera y Valverde del Camino.
 
-Aplicación desarrollada por la Dirección General de Política Digital, Consejería de Hacienda y Administración Pública. Información cartográfica proporcionada por el Instituto de Estadística y Cartografía de Andalucía y el GREA (Grupo de Emergencias de Andalucía).
+Aplicación desarrollada por la Dirección General de Política Digital, Consejería de Hacienda y Administración Pública.
+
 
 
 Etiquetas	
