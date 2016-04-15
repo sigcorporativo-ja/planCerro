@@ -31,8 +31,8 @@
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 <!-- ICONOS Y SPLASH -->
-	<icon src="resources/icon.png" />
-	<splash src="resources/screen.png" /> 
+	<icon src="resources/android/icon/drawable-xhdpi-icon.png" />
+
 <platform name="ios">
     <icon src="resources/ios/icon/icon.png" width="57" height="57"/>
     <icon src="resources/ios/icon/icon@2x.png" width="114" height="114"/>
