@@ -268,15 +268,21 @@ function updateLastPos(){
 		vectorSourceGPS.clear();
 		vectorSourceGPS.addFeatures(geoJSONformat.readFeatures(data, 
 			{featureProjection: 'EPSG:25830'}));
-		vectorSourceGPS.forEachFeature(function (f){
-			h=hermandades.getByField('etiqueta_gps', f.get('name'));
-			if (h!=null){
-				f.set('color',h.color);
-				h.lastPos = f.getGeometry().getCoordinates();
-			}else{
-				f.set('color',"#000");				
-			}
-		});
+		if (vectorSourceGPS.getFeatures().length>0){
+			vectorSourceGPS.forEachFeature(function (f){
+				h=hermandades.getByField('etiqueta_gps', f.get('name'));
+				if (h!=null){
+					f.set('color',h.color);
+					h.lastPos = f.getGeometry().getCoordinates();
+				}else{
+					f.set('color',"#000");				
+				}
+			});
+			
+		}else{
+			
+			showDialog(noGPS,'ERROR','error');
+		}
 	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
 }
 
@@ -290,7 +296,7 @@ function pintarGPS(hermandad){
 		});
 		vectorSourceGPS.addFeatures(features);
 	}
-	bbox = vectorSourceGPS.getExtent();
+	bbox = vectorSourceGPS.getFeatures().length>0 ? vectorSourceGPS.getExtent(): bboxContext;
 
 	if (mapajsGPS===undefined){
 		mapajsGPS = M.map({
@@ -398,7 +404,11 @@ function bindEvents(){
 				showDialog(noPosicion, "ERROR", "error");
 			}
 		}else{
-			mapajsGPS.setBbox(vectorSourceGPS.getExtent());
+			if (vectorSourceGPS.getFeatures().length>0){
+				mapajsGPS.setBbox(vectorSourceGPS.getExtent());
+			}else{
+				showDialog(noGPS,'ERROR','error');
+			}		
 		}
 	});
 }
@@ -419,7 +429,7 @@ $(document).ready(function() {
 });
 
 function onDeviceReady(){
-	StatusBar.hide();
+	if(window.isphone) {StatusBar.hide();}
     $.when.apply($,[cargarDias(), 
 		    cargarHermandades(),  
 		    cargarPasos(), 

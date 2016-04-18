@@ -11,11 +11,13 @@ var getHoras 		= "http://www.juntadeandalucia.es/justiciaeinterior/prom/rest/hor
 var getGPS			= "http://www.juntadeandalucia.es/justiciaeinterior/prom/rest/gps/";
 var getColor 		= "http://www.juntadeandalucia.es/justiciaeinterior/prom/rest/color/"; //NO USADO
 /**/
+var bboxContext = [96388,3959795,621889,4299792];
 var zoomToPoint = 12;
 var updateGPS = 300; //en segundos
 var timeout = 15; //en segundos. Se usa para detectar si hay algún problema con los servicios no controlado
 M.proxy(false);
 /*********************** MENSAJES DE ERROR NO CONTROLADO EN LOS SERVICIOS **********************/
+var noGPS			= "Actualmente no exiten posiciones de GPS. Inténtelo más tarde";
 var noPosicion 		= "No existe posición para la hermandad seleccionada";
 var errInesperado 	= "Ha ocurrido un error inesperado. Vuelva a ejecutar la aplicación";
 var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan Romero<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='#' onclick='javascript:openInfo();'>Consejería de Justicia e Interior</a>";
