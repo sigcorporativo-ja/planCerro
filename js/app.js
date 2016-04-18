@@ -179,8 +179,9 @@ function pintarRuta(hermandad, dia){
 	if (mapajsRuta===undefined){
 		mapajsRuta = M.map({
 			controls:["location"],
-			container:"mapRuta"}
-			);
+			container:"mapRuta",
+			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
+		});
 		lyRuta = new ol.layer.Vector({
 			source: vectorSourceRuta,
 			zIndex: 99999999,
@@ -254,8 +255,9 @@ function pintarToponimo(data){
 			controls:["location"],
 			zoom: zoomToPoint,
 			center: data.topoX+","+data.topoY+"*true",
-			container:"mapToponimo"}
-			);
+			container:"mapToponimo",
+			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
+		});
 	}else{
 		mapajsTopo.setCenter(data.topoX+","+data.topoY+"*true").setZoom(zoomToPoint); 
 	}
@@ -302,7 +304,8 @@ function pintarGPS(hermandad){
 		mapajsGPS = M.map({
 				controls:["location"],
 				container:"mapGPS",
-				bbox: bbox[0]+","+bbox[1]+","+bbox[2]+","+bbox[3]
+				bbox: bbox[0]+","+bbox[1]+","+bbox[2]+","+bbox[3],
+				wmcfiles: window.iOS? ['romero_ios'] : ['romero']
 			});
 		lyGPS = new ol.layer.Vector({
 			source: vectorSourceGPS,
@@ -414,28 +417,21 @@ function bindEvents(){
 }
 
 $(document).ready(function() {
-    // are we running in native app or in a browser?
-    window.isphone = false;
-    if(document.URL.indexOf("http://") === -1 
-        && document.URL.indexOf("https://") === -1) {
-        window.isphone = true;
-    }
-
-    if( window.isphone ) {
-        document.addEventListener("deviceready", onDeviceReady, false);
+	if( window.isApp ) {
+		document.addEventListener("deviceready", onDeviceReady, false);
     } else {
         onDeviceReady();
     }
 });
 
-function onDeviceReady(){
-	if(window.isphone) {StatusBar.hide();}
-    $.when.apply($,[cargarDias(), 
+function onDeviceReady(){		
+	if(window.isApp) {StatusBar.hide();}
+	$.when.apply($,[cargarDias(), 
 		    cargarHermandades(),  
 		    cargarPasos(), 
 		    cargarHermandadesRuta()]).always(function(){
-		      //JGL: oculto splash cuando se han cargado todos los datos básicos o ha dado error
-		      navigator.splashscreen.hide(); 
+		    //JGL: oculto splash cuando se han cargado todos los datos básicos o ha dado error
+		    if(window.isApp){ navigator.splashscreen.hide(); }
 		    });
     bindEvents();   
 };
@@ -451,8 +447,7 @@ function showDialog(message, title, severity) {
          dialog = $(html);
          var okButton = dialog.find('div.m-button > button');
          $(okButton).on("click", function () { 
-         	if (navigator.app && !/iPad|iPhone|iPod/.test(navigator.userAgent)
-     			&& title.toUpperCase().indexOf('INESPERADO')>-1){
+         	if (!window.iOS && title.toUpperCase().indexOf('INESPERADO')>-1){
          		navigator.app.exitApp();
 			}else{
          		dialog.remove(); 

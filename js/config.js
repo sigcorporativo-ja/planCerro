@@ -24,3 +24,5 @@ var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan Romero<br>Versión 1.
 function openInfo(){
 	cordova.InAppBrowser.open('http://www.juntadeandalucia.es/organismos/justiciaeinterior.html','_system');
 }
+window.isApp 	= /^(?!HTTP)/.test(document.URL.toUpperCase()); //
+window.iOS 		= /IPAD|IPHONE|IPOD/.test(navigator.userAgent.toUpperCase());
