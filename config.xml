@@ -43,10 +43,10 @@
     <splash src="resources/android/splash/drawable-port-ldpi-screen.png"/>
     <platform name="ios">
         <preference name="target-device" value="handset" /> 
-        <gap:config-file parent="UIStatusBarHidden">
-        <true/>
+        <gap:config-file parent="UIStatusBarHidden" overwrite="true">
+            <true/>
         </gap:config-file>  
-        <gap:config-file parent="UIViewControllerBasedStatusBarAppearance">
+        <gap:config-file parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
             <false/>
         </gap:config-file>
         <icon src="resources/ios/icon/icon.png" width="57" height="57"/>

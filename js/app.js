@@ -419,6 +419,7 @@ $(document).ready(function() {
 });
 
 function onDeviceReady(){
+	StatusBar.hide();
     $.when.apply($,[cargarDias(), 
 		    cargarHermandades(),  
 		    cargarPasos(), 
