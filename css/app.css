@@ -5,7 +5,7 @@
    -webkit-user-select: none;
    -webkit-touch-callout: none; 
 }
-a:link            {color:#a5924c; font-weight: bold}
+a:link       {color:#a5924c; font-weight: bold}
 a:visited    {color:#a5924c; font-weight: bold}
 .ui-header .ui-title { 
 	margin-left: 1em; 
@@ -19,7 +19,6 @@ a:visited    {color:#a5924c; font-weight: bold}
   -webkit-border-radius: .4em !important;
   border-radius: .4em !important;
 }
-
     
 /*sin padding a todas menos #home*/
 .ui-page:not(#home) .ui-content{padding:0}    /*[#ruta, #camino, #gps, #diario, #horas, #toponimo]*/
@@ -76,23 +75,6 @@ body,
   height: inherit;
 }
 
-/***elimino estilos de seleccionado y activo ya que no interesan****/
-.ui-focus,
-.ui-btn:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    background-image: none !important;
-    background: none !important;
-}
-.ui-btn-active {
- background-image: none !important;
- background: none !important;
- border: none !important;
- color: #000 !important; 
-}
-
-
 /*GENERAR THEME*/
 .ui-content {
   background-color: #c8be89;
@@ -118,4 +100,11 @@ body,
 .m-dialog.info div.m-button>button, .m-dialog.info div.m-title {
     background-color: #a5924c;
     color: beige;
+}
+/***elimino estilos de seleccionado y activo ya que no interesan****/
+.ui-btn:hover,
+.ui-btn:active,
+.ui-focus{
+    background-color: beige !important;
+    color: #000 !important; /*texto negro ya que cambia a blanco*/
 }
