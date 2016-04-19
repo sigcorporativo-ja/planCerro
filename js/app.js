@@ -425,7 +425,7 @@ $(document).ready(function() {
 });
 
 function onDeviceReady(){		
-	if(window.isApp) {StatusBar.hide();}
+	//if(window.isApp) {StatusBar.hide();}
 	$.when.apply($,[cargarDias(), 
 		    cargarHermandades(),  
 		    cargarPasos(), 
