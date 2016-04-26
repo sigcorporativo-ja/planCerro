@@ -4,7 +4,7 @@
 		id          = "es.juntadeandalucia.mapea4.planromero16"
 		version     = "1.0.0"
         android-versionCode = "1.0.0"
-        ios-CFBundleVersion = "1.0.0.1" >
+        ios-CFBundleVersion = "1.0.0.2" >
 
 
 	<name>Plan Romero 2016</name>
