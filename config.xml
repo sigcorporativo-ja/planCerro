@@ -3,7 +3,7 @@
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id          = "es.juntadeandalucia.mapea.planromero"
 		version     = "1.0.0"
-        android-versionCode = "2.0.0"
+        android-versionCode = "200"
         ios-CFBundleVersion = "1.0.0.2" >
 
 
