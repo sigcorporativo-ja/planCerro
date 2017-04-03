@@ -13,7 +13,7 @@
             <tbody>
                <tr>
                   <td class="key">{{key}}</td>
-                  <td class="value">{{value}}</td>
+                  <td class="value{{#oneword value}} m-wordbreak{{/oneword}}">{{{value}}}</td>
                </tr>
             </tbody>
          </table>
@@ -22,7 +22,9 @@
       {{/each}}
    </div>
    {{#eq docs.length 0}}
-   <div class="partial">No se han encontrado resultados para la búsqueda "{{query}}".</div>
+   <div class="results">
+      <div class="partial">No se han encontrado resultados para la búsqueda "{{query}}".</div>
+   </div>
    {{/eq}}
    <div class="page">
       <span class="found" id="m-geosearch-page-found">{{docs.length}}</span> de <span class="total">{{total}}</span>

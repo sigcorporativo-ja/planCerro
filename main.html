@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * data: blob: filesystem:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
 
   <link href="lib/jquery/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
-  <link href="lib/mapea/assets/css/mapea.ol3.min.css" rel="stylesheet" />
+  <link href="lib/mapea/assets/css/mapea.ol.min.css" rel="stylesheet" />
   <link href="css/app.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="cordova.js"></script>
   <script src="lib/jquery/jquery-1.12.1.min.js"></script>
@@ -18,14 +18,14 @@
   	  $.mobile.pushStateEnabled = false;
 	  });
   </script>
-  <script src="lib/jquery/jquery.mobile-1.4.5.min.js"></script>   
-  <script src="lib/mapea/js/mapea.ol3.min.js "></script>
+  <script src="lib/jquery/jquery.mobile-1.4.5.min.js"></script>
+  <script src="lib/mapea/js/mapea.ol.min.js "></script>
   <script src="lib/browser-polyfill.js" type="text/javascript"></script>
   <script src="lib/mapea/js/configuration.js "></script>
   <script src="js/app.js"></script>
   <script src="js/config.js"></script>
-  
-  <title>Plan Romero 2016</title>
+
+  <title>Plan Romero 2017</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
   <div id="home" data-role="page">
     <div data-role="header" data-position="fixed">
       <h3>Plan Romero 2016</h3>
-      <a href="javascript:showInfo()" class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-right ui-icon-info ui-btn-icon-notext"></a> 
+      <a href="javascript:showInfo()" class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-right ui-icon-info ui-btn-icon-notext"></a>
     </div>
     <div role="main" class="ui-content">
       <ul data-role="listview" data-inset="true">
@@ -62,20 +62,20 @@
       <div data-role="navbar">
         <ul>
 
-          <li><select id="dropHermandadRuta" name="dropHermandadRuta" data-shadow="false" data-mini="true" data-corners="false">      
+          <li><select id="dropHermandadRuta" name="dropHermandadRuta" data-shadow="false" data-mini="true" data-corners="false">
           </select>       </li>
-          <li><select id="dropDiaRuta" name="dropDiaRuta" data-shadow="false" data-mini="true" data-corners="false">            
+          <li><select id="dropDiaRuta" name="dropDiaRuta" data-shadow="false" data-mini="true" data-corners="false">
           </select></li>
 
         </ul>
       </div><!-- /navbar -->
-    </div>  
-    
+    </div>
+
 
     <div role="main" class="ui-content">
-      <div id="mapRuta"></div> 
+      <div id="mapRuta"></div>
     </div> <!--content-->
-    
+
   </div><!-- fin ruta-->
     <!-- Page: camino  -->
     <div id="camino" data-role="page">
@@ -92,7 +92,7 @@
         </div>
       </div>
       <div role="main" class="ui-content">
-        <div data-role="collapsibleset" data-collapsed-icon="plus" data-expanded-icon="minus" 
+        <div data-role="collapsibleset" data-collapsed-icon="plus" data-expanded-icon="minus"
         data-inset="true" data-corners="false" id="listCamino">
       </div>
       <div id="msjCamino" class="noinfo">
@@ -115,11 +115,11 @@
       </div>
     </div>
     <div role="main" class="ui-content">
-      <div id="mapGPS"></div> 
+      <div id="mapGPS"></div>
     </div>
   </div><!--fin gps-->
   <!-- Page: diario  -->
-  <div id="diario" data-role="page">    
+  <div id="diario" data-role="page">
     <div data-role="header" data-position="fixed">
       <a href="#" data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-alt-icon ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a> <!--ui-corner-all-->
       <h3>Movimiento diario</h3>
@@ -149,11 +149,11 @@
       <ul>
         <li>
           <select id="dropPasos" name="dropPasos" data-shadow="false" data-mini="true" data-corners="false">
-          </select>  
+          </select>
         </li>
         <li>
           <select id="dropDiasPaso" name="dropDiasPaso" data-shadow="false" data-mini="true" data-corners="false">
-          </select>  
+          </select>
         </li>
       </ul>
     </div>
@@ -173,10 +173,10 @@
     <h3></h3>
     <p class="subheader"</p>
     </div>
-    <div role="main" class="ui-content">      
+    <div role="main" class="ui-content">
       <div id="mapToponimo" class="m-mapea-container"></div>
     </div><!--content-->
-    
+
   </div><!--fin toponimo-->
 </div>
 

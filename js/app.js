@@ -8,7 +8,7 @@ var hermandades = [];
 hermandades.getByField = function (field, value){
 	for(i=0;i<this.length;i++){//forEach no interrumpe con return
 		if(this[i][field] && this[i][field]!=null
-			&& this[i][field].toString().toUpperCase()===value.toString().toUpperCase()) return this[i]; 
+			&& this[i][field].toString().toUpperCase()===value.toString().toUpperCase()) return this[i];
 	}
 	return null;
 };
@@ -17,25 +17,25 @@ hermandades.add = function (h){
 };
 /*************************************/
 
-function getInfo(url,filtro){
-	$.mobile.loading().show();
+function getInfo(url,filtro,showLoading = true){
+	showLoading && $.mobile.loading().show();
 	if (filtro===undefined) filtro={};
 	filtro.apikey=apikey;
 	return $.ajax({
 		dataType: "jsonp",
 		url: url,
 		timeout: timeout*1000,
-		data: filtro		
+		data: filtro
 	}).then(function(data, textStatus, jqXHR) {
 		if (data.error){
 			data.peticion=$(this)[0].url;
 			return $.Deferred().reject(data);
 		}else{
-			return data;			
+			return data;
 		}
 	}).fail(function(e){
 		//Captura de error genérica para todas las llamadas
-		console.error(e.peticion, e.error);		
+		console.error(e.peticion, e.error);
 		if (e.statusText){ //ES UN ERROR NO CONTROLADO
 			showDialog(errInesperado,'ERROR INESPERADO','error');
 		}
@@ -112,10 +112,10 @@ function cargarDiario(idDia){
 		$.each(data.hermandades,function(i,hermandad){
 			gps = hermandad.nombre_largo.indexOf('(GPS)');
 			if (gps>0){
-				li = $("<li>"+hermandad.nombre_largo.substr(0,gps).trim()+"</li>"); 
+				li = $("<li>"+hermandad.nombre_largo.substr(0,gps).trim()+"</li>");
 				li.append("<p class='ui-li-aside'>GPS</p>");
 			}else{
-				li = $("<li>"+hermandad.nombre_largo+"</li>"); 
+				li = $("<li>"+hermandad.nombre_largo+"</li>");
 			}
 			listDiario.append(li);
 		});
@@ -126,7 +126,7 @@ function cargarHoras(idPaso, idDia){
 		listHoras = $("#listHoras");
 		listHoras.empty();
 		$.each(data.hora_hermandad,function(i,horaPaso){
-			li = $("<li>"+horaPaso.nombre+"</li>"); 
+			li = $("<li>"+horaPaso.nombre+"</li>");
 			li.append("<p class='ui-li-aside'>"+horaPaso.hora+"</p>");
 			listHoras.append(li);
 		});
@@ -139,7 +139,7 @@ function cargarDiasPaso(idPaso){
 			option=$("<option value=" + dia.codigo_fecha + ">" + dia.dia_semana + "</option>");
 			$("#dropDiasPaso").append(option);
 		});
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');}); 
+	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
 }
 function cargarDias(){
 	return getInfo(getDias).done(function (data){
@@ -153,7 +153,7 @@ function cargarDias(){
 }
 function cargarFechasHermandad(idHermandad){
 	return getInfo(getDias+idHermandad).done(function (data){
-		
+
 		$("#dropDiaRuta").empty();
 		opCompleta=$("<option value='completa'>Completa</option>");
 		opIda=$("<option value='ida'>Ida</option>");
@@ -170,7 +170,7 @@ function cargarFechasHermandad(idHermandad){
 			option=$("<option value=" + dia.codigo_fecha + ">" + dia.dia_semana + "</option>");
 			$("#dropDiaRuta").append(option);
 		});
-		
+
 		if (vuelta) $("#dropDiaRuta option:first").after(opVuelta);
 		if (ida) $("#dropDiaRuta option:first").after(opIda);
 	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
@@ -190,7 +190,7 @@ function pintarRuta(hermandad, dia){
 				return [new ol.style.Style({
 					stroke: new ol.style.Stroke({
 						color: feature.get('color'),
-						width: 5									
+						width: 5
 					})/*,
 					text: new ol.style.Text({
 						text: feature.get('codigoTramo'),
@@ -211,17 +211,18 @@ function pintarRuta(hermandad, dia){
 				})];
 			}
 		});
-
+		lyGPS = getLayerGPS();
+		mapajsRuta.getMapImpl().addLayer(lyGPS);
 		mapajsRuta.getMapImpl().addLayer(lyRuta);
 
 	}else{}
 
 	filtro={};
 	if ($.isNumeric(dia)) filtro.codigo_fecha =dia;
-	
+
 	getInfo(getRutas+hermandad, filtro).done(function(data){
 		vectorSourceRuta.clear();
-		
+
 		features = geoJSONformat.readFeatures(data);
 		if (!$.isNumeric(dia)){
 			features= $.grep(features, function(f) {
@@ -236,7 +237,7 @@ function pintarRuta(hermandad, dia){
 				end = f.getGeometry().getLastCoordinate();
 				angulo = Math.abs(Math.atan2(end[1] - start[1], end[0] - start[0])* 180 / Math.PI);
 				//rad = Math.atan2(end[1] - start[1], end[0] - start[0]);
-				//angulo = 270-(rad*180/Math.PI); //más preciso ¿por?			
+				//angulo = 270-(rad*180/Math.PI); //más preciso ¿por?
 				f.set('angulo', angulo);
 			});*/
 
@@ -259,16 +260,18 @@ function pintarToponimo(data){
 			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
 		});
 	}else{
-		mapajsTopo.setCenter(data.topoX+","+data.topoY+"*true").setZoom(zoomToPoint); 
+		mapajsTopo.setCenter(data.topoX+","+data.topoY+"*true").setZoom(zoomToPoint);
 	}
+	lyGPS = getLayerGPS();
+	mapajsTopo.getMapImpl().addLayer(lyGPS);
 	$("#toponimo .ui-title").text(data.topoNombre);
 	$("#toponimo .subheader").text(data.topoHermandad);
 }
 function updateLastPos(){
 	filtro ={"emp" : "grea"};
-	return getInfo(getGPS,filtro).done(function(data){
+	return getInfo(getGPS,filtro,false).done(function(data){
 		vectorSourceGPS.clear();
-		vectorSourceGPS.addFeatures(geoJSONformat.readFeatures(data, 
+		vectorSourceGPS.addFeatures(geoJSONformat.readFeatures(data,
 			{featureProjection: 'EPSG:25830'}));
 		if (vectorSourceGPS.getFeatures().length>0){
 			vectorSourceGPS.forEachFeature(function (f){
@@ -277,19 +280,19 @@ function updateLastPos(){
 					f.set('color',h.color);
 					h.lastPos = f.getGeometry().getCoordinates();
 				}else{
-					f.set('color',"#000");				
+					f.set('color',"#000");
 				}
 			});
-			
+
 		}else{
-			
+
 			showDialog(noGPS,'ERROR','error');
 		}
 	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
 }
 
 function pintarGPS(hermandad){
-	if(hermandad!=null){ //pos si se quiere sólo pintar una hermandad
+	if(hermandad!=null){ //por si se quiere sólo pintar una hermandad
 		features = vectorSourceGPS.getFeatures();
 		vectorSourceGPS.clear();
 		$.grep(features, function(f) {
@@ -307,37 +310,42 @@ function pintarGPS(hermandad){
 				bbox: bbox[0]+","+bbox[1]+","+bbox[2]+","+bbox[3],
 				wmcfiles: window.iOS? ['romero_ios'] : ['romero']
 			});
-		lyGPS = new ol.layer.Vector({
-			source: vectorSourceGPS,
-			zIndex: 99999999,
-			name: 'GPS',
-			style: function(feature, resolution){
-				return [new ol.style.Style({
-					image: new ol.style.Circle({
-						radius: 5,
-						fill: new ol.style.Fill({
-							color: feature.get('color')
-						}),
-						stroke: new ol.style.Stroke({
-							color: "#000",
-							width: 1
-						})
-					}),
-					text: new ol.style.Text({
-						text: feature.get('name'),
-						font: 'bold 9px arial',
-						offsetY: -12,
-						fill: new ol.style.Fill({color: "#000"}),
-						stroke: new ol.style.Stroke({
-							color: "#ffffff",
-							width: 3
-						})
-					})
-				})];
-			}
-		});
+
+		lyGPS = getLayerGPS()
 		mapajsGPS.getMapImpl().addLayer(lyGPS);
 	}
+}
+function getLayerGPS(){
+	//TODO: estudiar una única instancia
+	return new ol.layer.Vector({
+		source: vectorSourceGPS,
+		zIndex: 99999999,
+		name: 'GPS',
+		style: function(feature, resolution){
+			return [new ol.style.Style({
+				image: new ol.style.Circle({
+					radius: 5,
+					fill: new ol.style.Fill({
+						color: feature.get('color')
+					}),
+					stroke: new ol.style.Stroke({
+						color: "#000",
+						width: 1
+					})
+				}),
+				text: new ol.style.Text({
+					text: feature.get('name'),
+					font: 'bold 9px arial',
+					offsetY: -12,
+					fill: new ol.style.Fill({color: "#000"}),
+					stroke: new ol.style.Stroke({
+						color: "#ffffff",
+						width: 3
+					})
+				})
+			})];
+		}
+	});
 }
 function bindEvents(){
 	$(document).on("pagechange", function (e, data) {
@@ -345,21 +353,18 @@ function bindEvents(){
 	  		switch(data.toPage[0].id) {
 	  			case 'ruta':
 		  			pintarRuta($("#dropHermandadRuta").val(),$("#dropDiaRuta").val());
-		  			mapajsRuta.getMapImpl().updateSize();  			
+		  			mapajsRuta.getMapImpl().updateSize();
 	  			break;
 	  			case 'toponimo':
 		  			pintarToponimo(data.options);
-		  			mapajsTopo.getMapImpl().updateSize();
+  	  			mapajsTopo.getMapImpl().updateSize();
 	  			break;
 	  			case 'gps':
 		  			updateLastPos().done(function(){
-		  				//JGL: actualización dinámica
-		  				//window.clearInterval(updateLastPos);
-		  				//window.setInterval(updateLastPos, updateGPS*1000);
 		  				pintarGPS();
 		  				//JGL: si sólo se quiere pintar la hermandad seleccionada
-		  				//pintarGPS($("#dropHermandadGps").val()); 
-		  				mapajsGPS.getMapImpl().updateSize();	  				
+		  				//pintarGPS($("#dropHermandadGps").val());
+		  				mapajsGPS.getMapImpl().updateSize();
 		  			});
 	  			break;
 	  			default:
@@ -411,7 +416,7 @@ function bindEvents(){
 				mapajsGPS.setBbox(vectorSourceGPS.getExtent());
 			}else{
 				showDialog(noGPS,'ERROR','error');
-			}		
+			}
 		}
 	});
 }
@@ -424,16 +429,17 @@ $(document).ready(function() {
     }
 });
 
-function onDeviceReady(){		
-	//if(window.isApp) {StatusBar.hide();}
-	$.when.apply($,[cargarDias(), 
-		    cargarHermandades(),  
-		    cargarPasos(), 
+function onDeviceReady(){
+	//JGL: actualización dinámica
+	updateLastPos().always(function(){window.setInterval(updateLastPos, updateGPS*1000);});
+	$.when.apply($,[cargarDias(),
+		    cargarHermandades(),
+		    cargarPasos(),
 		    cargarHermandadesRuta()]).always(function(){
 		    //JGL: oculto splash cuando se han cargado todos los datos básicos o ha dado error
 		    if(window.isApp){ navigator.splashscreen.hide(); }
 		    });
-    bindEvents();   
+    bindEvents();
 };
 
 function showDialog(message, title, severity) {
@@ -446,11 +452,11 @@ function showDialog(message, title, severity) {
       	 M.dialog.remove();
          dialog = $(html);
          var okButton = dialog.find('div.m-button > button');
-         $(okButton).on("click", function () { 
+         $(okButton).on("click", function () {
          	if (!window.iOS && title.toUpperCase().indexOf('INESPERADO')>-1){
          		navigator.app.exitApp();
 			}else{
-         		dialog.remove(); 
+         		dialog.remove();
          	}
          });
          $(document.body).append(dialog);
