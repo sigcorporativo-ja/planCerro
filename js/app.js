@@ -112,10 +112,10 @@ function cargarDiario(idDia){
 		$.each(data.hermandades,function(i,hermandad){
 			gps = hermandad.nombre_largo.indexOf('(GPS)');
 			if (gps>0){
-				li = $("<li>"+hermandad.nombre_largo.substr(0,gps).trim()+"</li>");
+				li = $("<li><a href='#mapaDiario' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo.substr(0,gps).trim()+"</a></li>");
 				li.append("<p class='ui-li-aside'>GPS</p>");
 			}else{
-				li = $("<li>"+hermandad.nombre_largo+"</li>");
+				li = $("<li><a href='#mapaDiario' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo+"</a></li>");
 			}
 			listDiario.append(li);
 		});
