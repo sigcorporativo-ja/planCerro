@@ -1,8 +1,9 @@
 /***********variables globales********/
-var mapajsRuta, mapajsTopo, mapajsGPS;
+var mapajsRuta, mapajsTopo, mapajsGPS, mapajsDiario;
 var geoJSONformat = new ol.format.GeoJSON();
 var vectorSourceGPS = new ol.source.Vector();
 var vectorSourceRuta = new ol.source.Vector();
+var vectorSourceDiario = new ol.source.Vector();
 var dias = null;
 var hermandades = [];
 hermandades.getByField = function (field, value){
@@ -112,10 +113,10 @@ function cargarDiario(idDia){
 		$.each(data.hermandades,function(i,hermandad){
 			gps = hermandad.nombre_largo.indexOf('(GPS)');
 			if (gps>0){
-				li = $("<li><a href='#mapaDiario' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo.substr(0,gps).trim()+"</a></li>");
+				li = $("<li><a href='javascript:pintarMovimientoDiario("+hermandad.codigo_hermandad+","+idDia+")' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo.substr(0,gps).trim()+"</a></li>");
 				li.append("<p class='ui-li-aside'>GPS</p>");
 			}else{
-				li = $("<li><a href='#mapaDiario' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo+"</a></li>");
+				li = $("<li><a href='javascript:pintarMovimientoDiario("+hermandad.codigo_hermandad+","+idDia+")' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo+"</a></li>");
 			}
 			listDiario.append(li);
 		});
@@ -182,35 +183,7 @@ function pintarRuta(hermandad, dia){
 			container:"mapRuta",
 			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
 		});
-		lyRuta = new ol.layer.Vector({
-			source: vectorSourceRuta,
-			zIndex: 99999999,
-			name: 'Ruta',
-			style: function(feature, resolution){
-				return [new ol.style.Style({
-					stroke: new ol.style.Stroke({
-						color: feature.get('color'),
-						width: 5
-					})/*,
-					text: new ol.style.Text({
-						text: feature.get('codigoTramo'),
-						rotation: feature.get('angulo'), //si se usa, descomentar el cáculo
-						font: 'bold 11px arial',
-						fill: new ol.style.Fill({color: "#000"}),
-						stroke: new ol.style.Stroke({
-							color: "#ffffff",
-							width: 3
-						})
-					})*/
-
-				/*,geometry: function(feature) {
-            // return the coordinates of the first ring of the polygon
-            var coordinates = feature.getGeometry().getCoordinates()[0];
-            console.log(coordinates);
-          }*/
-				})];
-			}
-		});
+		lyRuta = getLayerRuta(vectorSourceRuta);
 		lyGPS = getLayerGPS();
 		mapajsRuta.getMapImpl().addLayer(lyGPS);
 		mapajsRuta.getMapImpl().addLayer(lyRuta);
@@ -242,6 +215,64 @@ function pintarRuta(hermandad, dia){
 			});*/
 
 			mapajsRuta.setBbox(vectorSourceRuta.getExtent());
+		}else{
+			//JGL: no debería ocurrir
+			showDialog('El trayecto seleccionado no tiene elementos','INFORMACIÓN','warning');
+		}
+	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+}
+function getLayerRuta(vectorSource){
+	return new ol.layer.Vector({
+		source: vectorSource,
+		zIndex: 99999999,
+		name: 'Ruta',
+		style: function(feature, resolution){
+			return [new ol.style.Style({
+				stroke: new ol.style.Stroke({
+					color: feature.get('color'),
+					width: 5
+				})/*,
+				text: new ol.style.Text({
+					text: feature.get('codigoTramo'),
+					rotation: feature.get('angulo'), //si se usa, descomentar el cáculo
+					font: 'bold 11px arial',
+					fill: new ol.style.Fill({color: "#000"}),
+					stroke: new ol.style.Stroke({
+						color: "#ffffff",
+						width: 3
+					})
+				})*/
+
+			/*,geometry: function(feature) {
+					// return the coordinates of the first ring of the polygon
+					var coordinates = feature.getGeometry().getCoordinates()[0];
+					console.log(coordinates);
+				}*/
+			})];
+		}
+	});
+}
+function pintarMovimientoDiario(hermandad, dia, jornada = 0){
+	if (mapajsDiario===undefined){
+		mapajsDiario = M.map({
+			controls:["location"],
+			container:"mapDiario",
+			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
+		});
+		lyRuta = getLayerRuta(vectorSourceDiario);
+		lyGPS = getLayerGPS();
+		mapajsDiario.getMapImpl().addLayer(lyGPS);
+		mapajsDiario.getMapImpl().addLayer(lyRuta);
+
+	}else{}
+
+	//en este caso el dia siempre es numérico
+	getInfo(getRutas+hermandad, {"codigo_fecha" : dia}).done(function(data){
+		vectorSourceDiario.clear();
+		features = geoJSONformat.readFeatures(data);
+		if (features.length>0){
+			vectorSourceDiario.addFeatures(features);
+			$.mobile.changePage('#mapaDiario');
 		}else{
 			//JGL: no debería ocurrir
 			showDialog('El trayecto seleccionado no tiene elementos','INFORMACIÓN','warning');
@@ -358,6 +389,10 @@ function bindEvents(){
 	  			case 'toponimo':
 		  			pintarToponimo(data.options);
   	  			mapajsTopo.getMapImpl().updateSize();
+	  			break;
+					case 'mapaDiario':
+						mapajsDiario.setBbox(vectorSourceDiario.getExtent());
+						mapajsDiario.getMapImpl().updateSize();
 	  			break;
 	  			case 'gps':
 		  			updateLastPos().done(function(){

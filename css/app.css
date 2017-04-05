@@ -3,12 +3,12 @@
 }
 :not(input):not(textarea):not(.m-mapea-container) {
    -webkit-user-select: none;
-   -webkit-touch-callout: none; 
+   -webkit-touch-callout: none;
 }
 a:link       {color:#a5924c; font-weight: bold}
 a:visited    {color:#a5924c; font-weight: bold}
-.ui-header .ui-title { 
-	margin-left: 1em; 
+.ui-header .ui-title {
+	margin-left: 1em;
 	margin-right: 1em;
 }
 .ui-btn{text-align: left}
@@ -19,16 +19,16 @@ a:visited    {color:#a5924c; font-weight: bold}
   -webkit-border-radius: .4em !important;
   border-radius: .4em !important;
 }
-    
+
 /*sin padding a todas menos #home*/
 .ui-page:not(#home) .ui-content{padding:0}    /*[#ruta, #camino, #gps, #diario, #horas, #toponimo]*/
 
 /*en los bloques quito el borde y el margen*/
-[class*=ui-grid-] [class*=ui-block-]>.ui-btn, 
-[class*=ui-grid-] [class*=ui-block-]>.ui-select,  
-[class*=ui-grid-] [class*=ui-block-]>.ui-checkbox,  
-[class*=ui-grid-] [class*=ui-block-]>.ui-radio,  
-[class*=ui-grid-] [class*=ui-block-]>button.ui-btn-inline,  
+[class*=ui-grid-] [class*=ui-block-]>.ui-btn,
+[class*=ui-grid-] [class*=ui-block-]>.ui-select,
+[class*=ui-grid-] [class*=ui-block-]>.ui-checkbox,
+[class*=ui-grid-] [class*=ui-block-]>.ui-radio,
+[class*=ui-grid-] [class*=ui-block-]>button.ui-btn-inline,
 [class*=ui-grid-] [class*=ui-block-]>button.ui-btn-icon-notext,
 .ui-collapsible-inset, .ui-collapsible-set,
 .ui-content .ui-listview-inset, .ui-panel-inner>.ui-listview-inset /*listas*/
@@ -87,10 +87,10 @@ body,
 .ui-page-theme-a .ui-btn, .ui-page-theme-a .ui-btn:visited{
   background-color: beige;
 }
-.ui-btn-icon-left:after, 
-.ui-btn-icon-right:after, 
-.ui-btn-icon-top:after, 
-.ui-btn-icon-bottom:after, 
+.ui-btn-icon-left:after,
+.ui-btn-icon-right:after,
+.ui-btn-icon-top:after,
+.ui-btn-icon-bottom:after,
 .ui-btn-icon-notext:after {
   background-color: #a5924c;
 }

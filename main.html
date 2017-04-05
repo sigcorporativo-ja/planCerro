@@ -153,6 +153,19 @@
      <div id="mapDiario"></div>
    </div> <!--content-->
 
+   <div data-role="footer" data-position="fixed">
+     <div data-role="tabs" id="tabs">
+       <div data-role="navbar">
+         <ul>
+           <li><button onclick="filtrarMapaDiario(0)" class="ui-btn-active">Todos</button></li>
+           <li><button onclick="filtrarMapaDiario(1)" class="ui-btn">Mañana</button></li>
+           <li><button onclick="filtrarMapaDiario(2)" class="ui-btn">Tarde</button></li>
+           <li><button onclick="filtrarMapaDiario(3)" class="ui-btn">Noche</button></li>
+         </ul>
+       </div>
+     </div>
+	 </div>
+
  </div><!-- fin mapadiario-->
  <!-- Page: horas  -->
  <div id="horas" data-role="page">
