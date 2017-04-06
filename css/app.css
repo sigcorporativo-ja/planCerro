@@ -108,3 +108,6 @@ body,
     background-color: beige !important;
     color: #000 !important; /*texto negro ya que cambia a blanco*/
 }
+.m-popup>div.m-content>div.m-body>div.m-geojson-content>div.result>table td.key {
+  text-align: left !important;
+}

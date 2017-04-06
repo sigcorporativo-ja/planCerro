@@ -113,10 +113,10 @@ function cargarDiario(idDia){
 		$.each(data.hermandades,function(i,hermandad){
 			gps = hermandad.nombre_largo.indexOf('(GPS)');
 			if (gps>0){
-				li = $("<li><a href='javascript:pintarMovimientoDiario("+hermandad.codigo_hermandad+","+idDia+")' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo.substr(0,gps).trim()+"</a></li>");
+				li = $("<li><a href='javascript:pintarMovimientoDiario("+JSON.stringify(hermandad)+","+idDia+")' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo.substr(0,gps).trim()+"</a></li>");
 				li.append("<p class='ui-li-aside'>GPS</p>");
 			}else{
-				li = $("<li><a href='javascript:pintarMovimientoDiario("+hermandad.codigo_hermandad+","+idDia+")' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo+"</a></li>");
+				li = $("<li><a href='javascript:pintarMovimientoDiario("+JSON.stringify(hermandad)+","+idDia+")' class='ui-btn ui-btn-icon-right ui-icon-eye'>"+hermandad.nombre_largo+"</a></li>");
 			}
 			listDiario.append(li);
 		});
@@ -253,24 +253,58 @@ function getLayerRuta(vectorSource){
 	});
 }
 function pintarMovimientoDiario(hermandad, dia, jornada = 0){
-	if (mapajsDiario===undefined){
+	var jsonPois = {"type": "FeatureCollection", "crs": {
+	"type": "name",
+	"properties": {
+		"name": "urn:ogc:def:crs:EPSG:25830"
+		}
+	},
+		"features": []
+	};
+	//if (mapajsDiario===undefined){
+	(mapajsDiario && mapajsDiario.destroy());
 		mapajsDiario = M.map({
 			controls:["location"],
 			container:"mapDiario",
-			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
+			wmcfiles: ['romero_ios', 'romero']
 		});
-		lyRuta = getLayerRuta(vectorSourceDiario);
-		lyGPS = getLayerGPS();
-		mapajsDiario.getMapImpl().addLayer(lyGPS);
-		mapajsDiario.getMapImpl().addLayer(lyRuta);
+	//}else{
+	//	mapajsDiario.removeLayers(mapajsDiario.getLayers());
 
-	}else{}
+	//}
+
+
+	getInfo(getCamino+hermandad.codigo_hermandad, {"codigo_fecha" : dia}).done(function(data){
+		$.each(data.pasos,function(i,paso){
+			texto_fecha = paso.texto_fecha.match(/\d{1,2}:\d{1,2}/);
+			topoNombre = texto_fecha.input.substr(0,texto_fecha.index).trim();
+			fPoi = { "type": "Feature",
+        "geometry": {"type": "Point", "coordinates": [paso.x, paso.y]},
+        "properties": {"nombre": topoNombre,
+											 "hora de paso" : texto_fecha[0]}
+			};
+			jsonPois.features.push(fPoi);
+		});
+		console.log(jsonPois);
+		lyPois = new M.layer.GeoJSON({
+						name: 'Pasos, sesteos y pernoctas',
+						source: JSON.stringify(jsonPois)},
+				    {hide: attrNotShow});
+		mapajsDiario.addLayers(lyPois);
+	}).fail(function(e){
+
+	});
+	lyRuta = getLayerRuta(vectorSourceDiario);
+	lyGPS = getLayerGPS();
+	mapajsDiario.getMapImpl().addLayer(lyGPS);
+	mapajsDiario.getMapImpl().addLayer(lyRuta);
 
 	//en este caso el dia siempre es numérico
-	getInfo(getRutas+hermandad, {"codigo_fecha" : dia}).done(function(data){
+	getInfo(getRutas+hermandad.codigo_hermandad, {"codigo_fecha" : dia}).done(function(data){
 		vectorSourceDiario.clear();
 		features = geoJSONformat.readFeatures(data);
 		if (features.length>0){
+			$("#mapaDiario .subheader").text(hermandad.nombre + " - " +  $("#dropDiaDiario option:selected").text());
 			vectorSourceDiario.addFeatures(features);
 			$.mobile.changePage('#mapaDiario');
 		}else{
