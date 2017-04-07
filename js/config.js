@@ -27,3 +27,15 @@ function openInfo(){
 }
 window.isApp 	= /^(?!HTTP)/.test(document.URL.toUpperCase()); //
 window.iOS 		= /IPAD|IPHONE|IPOD/.test(navigator.userAgent.toUpperCase());
+var poiStyle = new ol.style.Style({
+										image: new ol.style.Circle({
+															radius: 6,
+															fill: new ol.style.Fill({
+																color: 'rgba(0, 204, 204, 0.5)',
+																opacity: 0.2
+															}),
+															stroke: new ol.style.Stroke({
+																color: 'rgba(0, 204, 204, 1)',
+																width: 0.5
+															})
+														})});

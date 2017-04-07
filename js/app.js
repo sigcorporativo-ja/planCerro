@@ -285,12 +285,12 @@ function pintarMovimientoDiario(hermandad, dia, jornada = 0){
 			};
 			jsonPois.features.push(fPoi);
 		});
-		console.log(jsonPois);
 		lyPois = new M.layer.GeoJSON({
 						name: 'Pasos, sesteos y pernoctas',
 						source: JSON.stringify(jsonPois)},
 				    {hide: attrNotShow});
 		mapajsDiario.addLayers(lyPois);
+		lyPois.getImpl().getOL3Layer().setStyle(poiStyle)
 	}).fail(function(e){
 
 	});
@@ -324,6 +324,7 @@ function pintarToponimo(data){
 			container:"mapToponimo",
 			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
 		});
+		mapajsTopo.getImpl().getDrawLayer().getOL3Layer().setStyle(poiStyle);
 	}else{
 		mapajsTopo.setCenter(data.topoX+","+data.topoY+"*true").setZoom(zoomToPoint);
 	}
