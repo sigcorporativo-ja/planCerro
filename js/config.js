@@ -31,11 +31,11 @@ var poiStyle = new ol.style.Style({
 										image: new ol.style.Circle({
 															radius: 6,
 															fill: new ol.style.Fill({
-																color: 'rgba(0, 204, 204, 0.5)',
+																color: 'rgba(0, 204, 204, 0.6)',
 																opacity: 0.2
 															}),
 															stroke: new ol.style.Stroke({
-																color: 'rgba(0, 204, 204, 1)',
-																width: 0.5
+																color: 'rgba(0, 0, 204, 1)',
+																width: 1
 															})
 														})});
