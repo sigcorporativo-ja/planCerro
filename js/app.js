@@ -181,7 +181,7 @@ function pintarRuta(hermandad, dia){
 		mapajsRuta = M.map({
 			controls:["location"],
 			container:"mapRuta",
-			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
+			wmcfiles: ['romero_mapa','romero_satelite']
 		});
 		lyRuta = getLayerRuta(vectorSourceRuta);
 		lyGPS = getLayerGPS();
@@ -266,7 +266,7 @@ function pintarMovimientoDiario(hermandad, dia, jornada = 0){
 		mapajsDiario = M.map({
 			controls:["location"],
 			container:"mapDiario",
-			wmcfiles: ['romero_ios', 'romero']
+			wmcfiles: ['romero_mapa','romero_satelite']
 		});
 	//}else{
 	//	mapajsDiario.removeLayers(mapajsDiario.getLayers());
@@ -322,7 +322,7 @@ function pintarToponimo(data){
 			zoom: zoomToPoint,
 			center: data.topoX+","+data.topoY+"*true",
 			container:"mapToponimo",
-			wmcfiles: window.iOS? ['romero_ios'] : ['romero']
+			wmcfiles: ['romero_mapa','romero_satelite']
 		});
 		mapajsTopo.getImpl().getDrawLayer().getOL3Layer().setStyle(poiStyle);
 	}else{
@@ -374,7 +374,7 @@ function pintarGPS(hermandad){
 				controls:["location"],
 				container:"mapGPS",
 				bbox: bbox[0]+","+bbox[1]+","+bbox[2]+","+bbox[3],
-				wmcfiles: window.iOS? ['romero_ios'] : ['romero']
+				wmcfiles: ['romero_mapa','romero_satelite']
 			});
 
 		lyGPS = getLayerGPS()
