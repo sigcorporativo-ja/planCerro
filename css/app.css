@@ -111,3 +111,6 @@ body,
 .m-popup>div.m-content>div.m-body>div.m-geojson-content>div.result>table td.key {
   text-align: left !important;
 }
+.m-wmcselector-container{
+   height: 21px!important;
+}
