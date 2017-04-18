@@ -28,7 +28,7 @@ function openInfo(){
 window.isApp 	= /^(?!HTTP)/.test(document.URL.toUpperCase()); //
 window.iOS 		= /IPAD|IPHONE|IPOD/.test(navigator.userAgent.toUpperCase());
 var poiStyle = function(feature, resolution){
-	etiqueta += feature.get('nombre') || "";
+	etiqueta = feature.get('nombre') || "";
 	etiqueta += "\n\r";
 	etiqueta += feature.get('hora de paso') || "";
 	return [new ol.style.Style({
