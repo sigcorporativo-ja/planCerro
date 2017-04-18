@@ -313,8 +313,6 @@ function pintarMovimientoDiario(hermandad, dia, jornada = 0){
 			console.error(e);
 	});
 
-
-
 	//en este caso el dia siempre es numérico
 	getInfo(getRutas+hermandad.codigo_hermandad, {"codigo_fecha" : dia}).done(function(data){
 		vectorSourceDiario.clear();

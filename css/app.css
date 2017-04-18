@@ -5,8 +5,8 @@
    -webkit-user-select: none;
    -webkit-touch-callout: none;
 }
-a:link       {color:#a5924c; font-weight: bold}
-a:visited    {color:#a5924c; font-weight: bold}
+a:link       {color:#3f3f3e; font-weight: bold}
+a:visited    {color:#3f3f3e; font-weight: bold}
 .ui-header .ui-title {
 	margin-left: 1em;
 	margin-right: 1em;
@@ -64,6 +64,12 @@ body,
   padding: 0;
 }
 
+div.with_background {
+  height: inherit;
+  background: url("../img/background17v1.jpg") no-repeat center bottom;
+  background-size: 100%, cover;
+}
+
 .ui-page,
 .ui-page * {
   -webkit-box-sizing: border-box;
@@ -77,12 +83,12 @@ body,
 
 /*GENERAR THEME*/
 .ui-content {
-  background-color: #c8be89;
+  background-color: white;
 }
 .ui-page-theme-a .ui-bar-inherit{
-  background-color: #a5924c;
-  color: beige;
-  border-color: #a5924c;
+  background-color: #c0b997;
+  color: #3f3f3e;
+  border-color: #c0b997;
 }
 .ui-page-theme-a .ui-btn, .ui-page-theme-a .ui-btn:visited{
   background-color: beige;
@@ -92,14 +98,14 @@ body,
 .ui-btn-icon-top:after,
 .ui-btn-icon-bottom:after,
 .ui-btn-icon-notext:after {
-  background-color: #a5924c;
+  background-color: #c0b997;
 }
 .m-dialog.info div.m-message{
   text-align: center;
 }
 .m-dialog.info div.m-button>button, .m-dialog.info div.m-title {
-    background-color: #a5924c;
-    color: beige;
+    background-color: #c0b997;
+    color: #3f3f3e;
 }
 /***elimino estilos de seleccionado y activo ya que no interesan****/
 .ui-btn:hover,

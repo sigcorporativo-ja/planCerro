@@ -21,7 +21,7 @@ var attrNotShow = [ "the_geom", "geom", "geometry", "_version_", "solrid", "keyw
 var noGPS			= "Actualmente no existen posiciones de las hermandades. Inténtelo más tarde";
 var noPosicion 		= "No existe posición para la hermandad seleccionada";
 var errInesperado 	= "Ha ocurrido un error inesperado. Vuelva a ejecutar la aplicación";
-var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan Romero<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='#' onclick='javascript:openInfo();'>Consejería de Justicia e Interior</a>";
+var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan Romero 2017<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='#' onclick='javascript:openInfo();'>Consejería de Justicia e Interior</a>";
 function openInfo(){
 	cordova.InAppBrowser.open('http://www.juntadeandalucia.es/organismos/justiciaeinterior.html','_system');
 }
