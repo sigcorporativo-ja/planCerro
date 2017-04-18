@@ -13,12 +13,12 @@ var getColor 		= "http://www.juntadeandalucia.es/justiciaeinterior/prom/rest/col
 /**/
 var bboxContext = [96388,3959795,621889,4299792];
 var zoomToPoint = 12;
-var updateGPS = 300; //en segundos
+var updateGPS = 150; //en segundos
 var timeout = 15; //en segundos. Se usa para detectar si hay algún problema con los servicios no controlado
 M.proxy(false);
 var attrNotShow = [ "the_geom", "geom", "geometry", "_version_", "solrid", "keywords", "equipamiento"];
 /*********************** MENSAJES DE ERROR NO CONTROLADO EN LOS SERVICIOS **********************/
-var noGPS			= "Actualmente no exiten posiciones de GPS. Inténtelo más tarde";
+var noGPS			= "Actualmente no existen posiciones de las hermandades. Inténtelo más tarde";
 var noPosicion 		= "No existe posición para la hermandad seleccionada";
 var errInesperado 	= "Ha ocurrido un error inesperado. Vuelva a ejecutar la aplicación";
 var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan Romero<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='#' onclick='javascript:openInfo();'>Consejería de Justicia e Interior</a>";
@@ -27,15 +27,30 @@ function openInfo(){
 }
 window.isApp 	= /^(?!HTTP)/.test(document.URL.toUpperCase()); //
 window.iOS 		= /IPAD|IPHONE|IPOD/.test(navigator.userAgent.toUpperCase());
-var poiStyle = new ol.style.Style({
-										image: new ol.style.Circle({
-															radius: 6,
-															fill: new ol.style.Fill({
-																color: 'rgba(0, 204, 204, 0.6)',
-																opacity: 0.2
-															}),
-															stroke: new ol.style.Stroke({
-																color: 'rgba(0, 0, 204, 1)',
-																width: 1
-															})
-														})});
+var poiStyle = function(feature, resolution){
+	etiqueta += feature.get('nombre') || "";
+	etiqueta += "\n\r";
+	etiqueta += feature.get('hora de paso') || "";
+	return [new ol.style.Style({
+		image: new ol.style.Circle({
+							radius: 6,
+							fill: new ol.style.Fill({
+								color: 'rgba(0, 204, 204, 0.6)'
+							}),
+							stroke: new ol.style.Stroke({
+								color: 'rgba(0, 0, 204, 1)',
+								width: 1
+							})
+						}),
+			text: new ol.style.Text({
+				text: etiqueta,
+				font: 'bold 9px arial',
+				offsetY: -12,
+				fill: new ol.style.Fill({color: "#000"}),
+				stroke: new ol.style.Stroke({
+					color: "#ffffff",
+					width: 3
+				})
+			})
+	})];
+};

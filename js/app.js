@@ -183,6 +183,19 @@ function pintarRuta(hermandad, dia){
 			container:"mapRuta",
 			wmcfiles: ['romero_mapa','romero_satelite']
 		});
+		// mapajsRuta.on(M.evt.COMPLETED, function() { //M.evt.COMPLETED no está select
+		// 	window.setTimeout(function(){
+		// 		//$(".m-wmcselector-select").unbind("change");//no funciona
+		// 	  //clono y reemplazo para eliminar todos los eventos
+		// 	  var wmcSel = $(".m-wmcselector-select")[0],
+		// 				wmcSelClone = wmcSel.cloneNode(true);
+		// 	  wmcSel.parentNode.replaceChild(wmcSelClone, wmcSel);
+		// 		wmcSelClone.addEventListener('change', function(e) {
+		// 					 e.preventDefault(); //no funciona
+		// 					 var selectedWMCLayer = mapajsRuta.getWMC($(this).find("option:selected").text())[0];
+		// 	         selectedWMCLayer.select();
+		// 	  })}, 1000);
+		// });
 		lyRuta = getLayerRuta(vectorSourceRuta);
 		lyGPS = getLayerGPS();
 		mapajsRuta.getMapImpl().addLayer(lyGPS);
@@ -273,7 +286,10 @@ function pintarMovimientoDiario(hermandad, dia, jornada = 0){
 
 	//}
 
-
+	lyRuta = getLayerRuta(vectorSourceDiario);
+	lyGPS = getLayerGPS();
+	mapajsDiario.getMapImpl().addLayer(lyRuta);
+	mapajsDiario.getMapImpl().addLayer(lyGPS);
 	getInfo(getCamino+hermandad.codigo_hermandad, {"codigo_fecha" : dia}).done(function(data){
 		$.each(data.pasos,function(i,paso){
 			texto_fecha = paso.texto_fecha.match(/\d{1,2}:\d{1,2}/);
@@ -286,18 +302,18 @@ function pintarMovimientoDiario(hermandad, dia, jornada = 0){
 			jsonPois.features.push(fPoi);
 		});
 		lyPois = new M.layer.GeoJSON({
-						name: 'Pasos, sesteos y pernoctas',
+						name: 'Información',
 						source: JSON.stringify(jsonPois)},
 				    {hide: attrNotShow});
+
 		mapajsDiario.addLayers(lyPois);
+		lyPois.setZIndex(99999999);
 		lyPois.getImpl().getOL3Layer().setStyle(poiStyle)
 	}).fail(function(e){
-
+			console.error(e);
 	});
-	lyRuta = getLayerRuta(vectorSourceDiario);
-	lyGPS = getLayerGPS();
-	mapajsDiario.getMapImpl().addLayer(lyGPS);
-	mapajsDiario.getMapImpl().addLayer(lyRuta);
+
+
 
 	//en este caso el dia siempre es numérico
 	getInfo(getRutas+hermandad.codigo_hermandad, {"codigo_fecha" : dia}).done(function(data){
@@ -333,6 +349,7 @@ function pintarToponimo(data){
 	$("#toponimo .ui-title").text(data.topoNombre);
 	$("#toponimo .subheader").text(data.topoHermandad);
 }
+
 function updateLastPos(){
 	filtro ={"emp" : "grea"};
 	return getInfo(getGPS,filtro,false).done(function(data){
@@ -349,10 +366,6 @@ function updateLastPos(){
 					f.set('color',"#000");
 				}
 			});
-
-		}else{
-
-			showDialog(noGPS,'ERROR','error');
 		}
 	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
 }
@@ -420,14 +433,17 @@ function bindEvents(){
 	  			case 'ruta':
 		  			pintarRuta($("#dropHermandadRuta").val(),$("#dropDiaRuta").val());
 		  			mapajsRuta.getMapImpl().updateSize();
+						if (vectorSourceGPS.getFeatures().length<=0) showDialog(noGPS,'ERROR','error');
 	  			break;
 	  			case 'toponimo':
 		  			pintarToponimo(data.options);
   	  			mapajsTopo.getMapImpl().updateSize();
+						if (vectorSourceGPS.getFeatures().length<=0) showDialog(noGPS,'ERROR','error');
 	  			break;
 					case 'mapaDiario':
 						mapajsDiario.setBbox(vectorSourceDiario.getExtent());
 						mapajsDiario.getMapImpl().updateSize();
+						if (vectorSourceGPS.getFeatures().length<=0) showDialog(noGPS,'ERROR','error');
 	  			break;
 	  			case 'gps':
 		  			updateLastPos().done(function(){
@@ -435,6 +451,7 @@ function bindEvents(){
 		  				//JGL: si sólo se quiere pintar la hermandad seleccionada
 		  				//pintarGPS($("#dropHermandadGps").val());
 		  				mapajsGPS.getMapImpl().updateSize();
+							if (vectorSourceGPS.getFeatures().length<=0) showDialog(noGPS,'ERROR','error');
 		  			});
 	  			break;
 	  			default:
@@ -489,6 +506,7 @@ function bindEvents(){
 			}
 		}
 	});
+
 }
 
 $(document).ready(function() {
@@ -514,25 +532,18 @@ function onDeviceReady(){
 
 function showDialog(message, title, severity) {
 	if (message && message!=null && message!=''){
-      M.template.compile('dialog.html', {
-         'message': message,
-         'title': title,
-         'severity': severity
-      }).then(function(html) {
-      	 M.dialog.remove();
-         dialog = $(html);
-         var okButton = dialog.find('div.m-button > button');
-         $(okButton).on("click", function () {
-         	if (!window.iOS && title.toUpperCase().indexOf('INESPERADO')>-1){
-         		navigator.app.exitApp();
+		M.dialog.show(message,title,severity,document.body).then(function(html) {
+     var okButton = $(this).find('div.m-button > button');
+     $(okButton).on("click", function () {
+     	if (!window.iOS && title.toUpperCase().indexOf('INESPERADO')>-1){
+     		navigator.app.exitApp();
 			}else{
-         		dialog.remove();
-         	}
-         });
-         $(document.body).append(dialog);
-      });
-    }
-   };
+     		dialog.remove();
+     	}
+     });
+    });
+  }
+};
 function showInfo(){
 	showDialog(htmlAcercade,'Acerca de','info');
 }
