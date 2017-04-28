@@ -124,7 +124,4 @@ div.with_background {
 .m-areas>div.m-area>div.m-panel.m-map-info{
   visibility: visible!important;
 }
-m-popup.m-collapsed {
-  top: 93vh;
-}
 /********************/
