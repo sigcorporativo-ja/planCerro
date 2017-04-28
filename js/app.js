@@ -18,7 +18,8 @@ hermandades.add = function (h){
 };
 /*************************************/
 
-function getInfo(url,filtro,showLoading = true){
+function getInfo(url,filtro,showLoading){
+	showLoading = showLoading || true;
 	showLoading && $.mobile.loading().show();
 	if (filtro===undefined) filtro={};
 	filtro.apikey=apikey;
