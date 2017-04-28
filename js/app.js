@@ -266,7 +266,8 @@ function getLayerRuta(vectorSource){
 		}
 	});
 }
-function pintarMovimientoDiario(hermandad, dia, jornada = 0){
+function pintarMovimientoDiario(hermandad, dia, jornada){
+	jornada = jornada || 0;
 	var jsonPois = {"type": "FeatureCollection", "crs": {
 	"type": "name",
 	"properties": {
