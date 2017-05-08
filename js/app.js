@@ -37,7 +37,7 @@ function getInfo(url,filtro,showLoading){
 		}
 	}).fail(function(e){
 		//Captura de error genérica para todas las llamadas
-		console.error(e.peticion, e.error);
+		//console.error(e.peticion, e.error);
 		if (e.statusText){ //ES UN ERROR NO CONTROLADO
 			showDialog(errInesperado,'ERROR INESPERADO','error');
 		}
@@ -54,7 +54,7 @@ function cargarHermandades(){
 			if(hermandad.gps){$("#dropHermandadGps").append(option.clone());}
 		});
 		cargarCamino($("#dropHermandadCamino").val());
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function cargarHermandadesRuta(){
 	return getInfo(getHermandades,{"ruta":true}).done(function(data){
@@ -63,7 +63,7 @@ function cargarHermandadesRuta(){
 			$("#dropHermandadRuta").append(option);
 		});
 		cargarFechasHermandad($("#dropHermandadRuta").val());
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function cargarPasos(){
 	return getInfo(getPasos).done(function(data){
@@ -75,7 +75,7 @@ function cargarPasos(){
 		cargarDiasPaso($("#dropPasos").val()).done(function(data){
 			cargarHoras($("#dropPasos").val(),$("#dropDiasPaso").val());
 		});
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function cargarCamino(idHermandad){
 	listCamino = $("#listCamino");
@@ -121,7 +121,7 @@ function cargarDiario(idDia){
 			}
 			listDiario.append(li);
 		});
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function cargarHoras(idPaso, idDia){
 	return getInfo(getHoras,{"codigo_toponimo":idPaso, "codigo_fecha":idDia}).done(function(data){
@@ -132,7 +132,7 @@ function cargarHoras(idPaso, idDia){
 			li.append("<p class='ui-li-aside'>"+horaPaso.hora+"</p>");
 			listHoras.append(li);
 		});
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function cargarDiasPaso(idPaso){
 	return getInfo(getFechasPaso+idPaso).done(function (data){
@@ -141,7 +141,7 @@ function cargarDiasPaso(idPaso){
 			option=$("<option value=" + dia.codigo_fecha + ">" + dia.dia_semana + "</option>");
 			$("#dropDiasPaso").append(option);
 		});
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function cargarDias(){
 	return getInfo(getDias).done(function (data){
@@ -151,7 +151,7 @@ function cargarDias(){
 			$("#dropDiaDiario").append(option);
 		});
 		cargarDiario($("#dropDiaDiario").val());
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function cargarFechasHermandad(idHermandad){
 	return getInfo(getDias+idHermandad).done(function (data){
@@ -175,7 +175,7 @@ function cargarFechasHermandad(idHermandad){
 
 		if (vuelta) $("#dropDiaRuta option:first").after(opVuelta);
 		if (ida) $("#dropDiaRuta option:first").after(opIda);
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function pintarRuta(hermandad, dia){
 	if (mapajsRuta===undefined){
@@ -233,7 +233,7 @@ function pintarRuta(hermandad, dia){
 			//JGL: no debería ocurrir
 			showDialog('El trayecto seleccionado no tiene elementos','INFORMACIÓN','warning');
 		}
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function getLayerRuta(vectorSource){
 	return new ol.layer.Vector({
@@ -327,7 +327,7 @@ function pintarMovimientoDiario(hermandad, dia, jornada){
 			//JGL: no debería ocurrir
 			showDialog('El trayecto seleccionado no tiene elementos','INFORMACIÓN','warning');
 		}
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 function pintarToponimo(data){
 
@@ -367,7 +367,7 @@ function updateLastPos(){
 				}
 			});
 		}
-	}).fail(function(e){showDialog(e.error.mensaje,'ERROR','error');});
+	}).fail(function(e){showError(e.error);;});
 }
 
 function pintarGPS(hermandad){
@@ -413,7 +413,7 @@ function getLayerGPS(){
 					})
 				}),
 				text: new ol.style.Text({
-					text: feature.get('name'),
+					text: feature.get('name') + "\n\r" + formatDate(new Date(feature.get('ts'))),
 					font: 'bold 9px arial',
 					offsetY: -12,
 					fill: new ol.style.Fill({color: "#000"}),
@@ -546,4 +546,8 @@ function showDialog(message, title, severity) {
 };
 function showInfo(){
 	showDialog(htmlAcercade,'Acerca de','info');
+}
+function showError(e){
+	errTxt = errMsg[errCode.indexOf(e.codigo)] || e.mensaje;
+	showDialog(errTxt,'ERROR','error');
 }
