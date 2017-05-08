@@ -47,7 +47,7 @@ var poiStyle = function(feature, resolution){
 			text: new ol.style.Text({
 				text: etiqueta,
 				font: 'bold 9px arial',
-				offsetY: -12,
+				offsetY: -18,
 				fill: new ol.style.Fill({color: "#000"}),
 				stroke: new ol.style.Stroke({
 					color: "#ffffff",
