@@ -59,6 +59,5 @@ var poiStyle = function(feature, resolution){
 var formatDate = function(date) {
 	//console.log(date);
   return date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " "
-	+  ('0' + date.getHours()).slice(-2) + ":" + ('0' + date.getMinutes()).slice(-2)
-	+ ":" + ('0' + date.getSeconds()).slice(-2);
+	+  ('0' + date.getHours()).slice(-2) + ":" + ('0' + date.getMinutes()).slice(-2);
 }
