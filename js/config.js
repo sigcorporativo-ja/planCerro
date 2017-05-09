@@ -13,7 +13,7 @@ var getColor 		= "http://www.juntadeandalucia.es/justiciaeinterior/prom/rest/col
 /**/
 var bboxContext = [96388,3959795,621889,4299792];
 var zoomToPoint = 12;
-var updateGPS = 150; //en segundos
+var updateGPS = 15; //en segundos
 var timeout = 15; //en segundos. Se usa para detectar si hay algún problema con los servicios no controlado
 M.proxy(false);
 var attrNotShow = [ "the_geom", "geom", "geometry", "_version_", "solrid", "keywords", "equipamiento"];
