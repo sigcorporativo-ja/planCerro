@@ -19,7 +19,7 @@ hermandades.add = function (h){
 /*************************************/
 
 function getInfo(url,filtro,showLoading){
-	showLoading = showLoading || true;
+	showLoading = showLoading !== undefined? showLoading : true;
 	showLoading && $.mobile.loading().show();
 	if (filtro===undefined) filtro={};
 	filtro.apikey=apikey;
@@ -267,7 +267,7 @@ function getLayerRuta(vectorSource){
 	});
 }
 function pintarMovimientoDiario(hermandad, dia, jornada){
-	jornada = jornada || 0;
+	jornada = jornada !== undefined? jornada : 0;
 	var jsonPois = {"type": "FeatureCollection", "crs": {
 	"type": "name",
 	"properties": {
