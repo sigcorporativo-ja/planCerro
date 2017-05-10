@@ -91,7 +91,7 @@ div.with_background {
   border-color: #c0b997;
 }
 .ui-page-theme-a .ui-btn, .ui-page-theme-a .ui-btn:visited{
-  background-color: beige;
+  background-color: floralwhite;
 }
 .ui-btn-icon-left:after,
 .ui-btn-icon-right:after,
@@ -111,7 +111,7 @@ div.with_background {
 .ui-btn:hover,
 .ui-btn:active,
 .ui-focus{
-    background-color: beige !important;
+    background-color: floralwhite !important;
     color: #000 !important; /*texto negro ya que cambia a blanco*/
 }
 .m-popup>div.m-content>div.m-body>div.m-geojson-content>div.result>table td.key {
