@@ -525,7 +525,11 @@ function onDeviceReady(){
 		    cargarPasos(),
 		    cargarHermandadesRuta()]).always(function(){
 		    //JGL: oculto splash cuando se han cargado todos los datos básicos o ha dado error
-		    if(window.isApp){ navigator.splashscreen.hide(); }
+			    if(window.isApp){
+						setTimeout(function() {
+	        			navigator.splashscreen.hide();
+	    			}, 2000);
+		 			}
 		    });
     bindEvents();
 };
