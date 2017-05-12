@@ -12,7 +12,7 @@
 	<author email="l-dirsigc.chap@juntadeandalucia.es" href="http://www.juntadeandalucia.es">
 		Junta de Andalucía
 	</author>
-	<content src="main.html" />
+	<content src="index.html" />
 	<access origin="*" />
 
 	<preference name="android-minSdkVersion" value="16"/>
