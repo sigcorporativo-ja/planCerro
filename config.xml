@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
-		id          = "es.juntadeandalucia.mapea.planromero"
+		id          = "es.juntadeandalucia.mapea.planromero16"
 		versionCode = "300"
 		version     = "3.0.0" >
 
@@ -12,7 +12,7 @@
 	<author email="l-dirsigc.chap@juntadeandalucia.es" href="http://www.juntadeandalucia.es">
 		Junta de Andalucía
 	</author>
-	<content src="index.html" />
+	<content src="main.html" />
 	<access origin="*" />
 
 	<preference name="android-minSdkVersion" value="16"/>
