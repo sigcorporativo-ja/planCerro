@@ -8,8 +8,8 @@
 a:link       {color:#3f3f3e; font-weight: bold}
 a:visited    {color:#3f3f3e; font-weight: bold}
 .ui-header .ui-title {
-	margin-left: 1em;
-	margin-right: 1em;
+	margin-left: 2.5em;
+	margin-right: 2.5em;
 }
 .ui-btn{text-align: left}
 .ui-mini {font-size: 12px}
