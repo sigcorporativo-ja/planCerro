@@ -199,8 +199,9 @@ function pintarRuta(hermandad, dia){
 		// });
 		lyRuta = getLayerRuta(vectorSourceRuta);
 		lyGPS = getLayerGPS();
-		mapajsRuta.getMapImpl().addLayer(lyGPS);
 		mapajsRuta.getMapImpl().addLayer(lyRuta);
+		mapajsRuta.getMapImpl().addLayer(lyGPS);
+
 
 	}else{}
 
