@@ -4,26 +4,29 @@ Plan Romero 2017
 
 Descripción breve (80)
 ======================
-Recorrido de las Hermandades del Rocío 2016, posición real de 30 de ellas.
+Recorrido de las Hermandades del Rocío 2017, posición real de 60 de ellas.
 
 
 Descripción completa (4000)
 ===========================
-El Plan Romero 2017 es un plan de emergencia ante posibles riesgos por la concentración de personas y desplazamientos producidos con motivo de la Romería de El Rocío. Por ello, se ha desarrollado esta APP para la consulta de toda la información de las hermandades, con datos de los itinerarios que recorren, lugares de paso, hermandades en peregrinación, y seguimiento en tiempo real a partir de dispositivos GPS. Las hermandades con seguimiento GPS son, en orden alfabético: Ayamonte, Bonares, Cerro del Águila, Córdoba, Écija, Emigrantes, Escacena del Campo, Estepona, Gibraleón, Huelva, Isla Crisitina, Jerez de la Frontera, La Línea de la Concepción, Lebrija, Los Palacios y Villafranca, Macarena, Mairena del Aljarafe, Málaga La Caleta, Málaga La Real, Olivares, Osuna, Puerto Real, El Puerto de Santa María, Rota, Sanlúcar de Barrameda, Sevilla El Salvador, Sevilla Sur, Triana, Utrera y Valverde del Camino.
+El Plan Romero 2017 es un plan de emergencia ante posibles riesgos por la concentración de personas y desplazamientos producidos con motivo de la Romería de El Rocío.
 
-Aplicación desarrollada por la Dirección General de Política Digital, Consejería de Hacienda y Administración Pública.
+Por ello, se ha desarrollado esta APP para la consulta de toda la información de las hermandades, con datos de los itinerarios que recorren, lugares de paso, hermandades en peregrinación y seguimiento en tiempo real a partir de dispositivos GPS.
 
+Las hermandades con seguimiento GPS son, en orden alfabético:
 
+Albaida del Aljarafe, Arcos de la Frontera, Ayamonte, Bonares, Bormujos, Cádiz, Camas, Carmona, Cerro del Águila, Chiclana, Chipiona, Chucena, Córdoba, Coria del Río, Dos Hermanas, Écija, El Puerto de Santa María, Emigrantes de Huelva, Escacena del Campo, Espartinas, Estapona, Gibraleón, Gines, Granada, Huelva, Isla Cristina, Jerez de la Frontera, La Línea de la Concepción, La Puebla del Río, Lebrija, Los Palacios y Villafranca, Macarena, Mairena del Aljarafe, Málaga, Málaga la Caleta, Manzanilla, Niebla, Olivares, Osuna, Palos de la Frontera, Puente Genil, Puerto Real, Punta Umbría, Rota, San Fernando, San Juan de Aznalfarache, San Juan del Puerto, Sanlúcar de Barrameda, Santiponce, Sevilla, Sevilla Sur, Tomares, Triana, Trigueros, Umbrete, Utrera, Valencina de la Concepción, Valverde del Camino, Villalba del Alcor, Villarrasa
 
-Etiquetas	
+Aplicación desarrollada por la Dirección General de Política Digital, Consejería de Hacienda y Administración Pública. Junta de Andalucía.
+
+Etiquetas
 ===========
 romería, rocío, hermandad, camino, recorrido
 
 Notas de versión
 =================
-Versión inicial
-
-****añadir algo aquí si se publica en forma de actualización***
+- Actualización de datos al 2017
+- Seguimiento de 60 hermandades en tiempo real
 
 Sitio web
 =========
@@ -32,5 +35,3 @@ http://juntadeandalucia.es/justiciaeinterior
 Correo electrónico
 ==================
 app-planromero.cji@juntadeandalucia.es
-
-
