@@ -87,32 +87,32 @@ div.with_background {
   background-color: white;
 }
 .ui-page-theme-a .ui-bar-inherit{
-  background-color: #c5000a;
+  background-color: #00853e;
   color: white;
-  border-color: #c5000a;
+  border-color: #00853e;
 }
 .ui-page-theme-a .ui-btn, .ui-page-theme-a .ui-btn:visited{
-  background-color: #fff4f6;
+  background-color: #f6f6f6;
 }
 .ui-btn-icon-left:after,
 .ui-btn-icon-right:after,
 .ui-btn-icon-top:after,
 .ui-btn-icon-bottom:after,
 .ui-btn-icon-notext:after {
-  background-color: #c5000a;
+  background-color: #00853e;
 }
 .m-dialog.info div.m-message{
   text-align: center;
 }
 .m-dialog.info div.m-button>button, .m-dialog.info div.m-title {
-    background-color: #c5000a;
+    background-color: #00853e;
     color: white;
 }
 /***elimino estilos de seleccionado y activo ya que no interesan****/
 .ui-btn:hover,
 .ui-btn:active,
 .ui-focus{
-    background-color: #fff4f6 !important;
+    background-color: #f6f6f6 !important;
     color: #000 !important; /*texto negro ya que cambia a blanco*/
 }
 .m-popup>div.m-content>div.m-body>div.m-geojson-content>div.result>table td.key {
