@@ -94,9 +94,9 @@ function cargarCamino(idHermandad){
 			}
 			texto_fecha = paso.texto_fecha.match(/\d{1,2}:\d{1,2}/);
 			topoNombre = texto_fecha.input.substr(0,texto_fecha.index).trim();
-			toponimo = {"topoX":paso.x,"topoY":paso.y,"topoNombre":topoNombre+" ("+texto_fecha+")","topoHermandad":$("#dropHermandadCamino option:selected").text()};
+			toponimo = {"topoX":paso.x,"topoY":paso.y,"topoNombre":topoNombre.replace('Paso', 'Paso por')+" ("+texto_fecha+")","topoHermandad":$("#dropHermandadCamino option:selected").text()};
 
-			li = $("<li><a href='javascript:$.mobile.changePage(\"#toponimo\","+JSON.stringify(toponimo)+")'>"+topoNombre+"</a><p class='ui-li-aside'><strong>"+texto_fecha[0]+"</strong></p></li>");
+			li = $("<li><a href='javascript:$.mobile.changePage(\"#toponimo\","+JSON.stringify(toponimo)+")'>"+topoNombre.replace('Paso', 'Paso por')+"</a><p class='ui-li-aside'><strong>"+texto_fecha[0]+"</strong></p></li>");
 			ul.append(li);
 			listCamino.append(div);
 		});

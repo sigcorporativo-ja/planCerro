@@ -17,7 +17,7 @@ var bboxContext = [395827,4210307,411397,4225578];
 var zoomToPoint = 12;
 var updateGPS = 150; //en segundos
 var timeout = 15; //en segundos. Se usa para detectar si hay algún problema con los servicios no controlado
-const urlPDF = "http://www.parlamentodeandalucia.es/webdinamica/portal-web-parlamento/pdf.do?tipodoc=coleccion&id=14380&cley=00";
+const urlPDF = "http://www.juntadeandalucia.es/justiciaeinterior/imgplan/InformaPlanCerro.pdf";
 M.proxy(false);
 var attrNotShow = [ "the_geom", "geom", "geometry", "_version_", "solrid", "keywords", "equipamiento"];
 /*********************** MENSAJES DE ERROR NO CONTROLADO EN LOS SERVICIOS **********************/
