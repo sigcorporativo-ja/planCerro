@@ -1,16 +1,16 @@
 var apikey="pl4n06";
 /************************************** SERVICIOS ****************************************/
-var getHermandades 	= "http://ws199.juntadeandalucia.es/vcab/rest/hermandades/";
-var getDias 		= "http://ws199.juntadeandalucia.es/vcab/rest/fechas/";
-var getRutas 		= "http://ws199.juntadeandalucia.es/vcab/rest/ruta/";
-var getFechas 		= "http://ws199.juntadeandalucia.es/vcab/rest/fechas/";
-var getCamino 		= "http://ws199.juntadeandalucia.es/vcab/rest/camino/";
-var getPasos 		= "http://ws199.juntadeandalucia.es/vcab/rest/pasos/";
-var getFechasPaso 	= "http://ws199.juntadeandalucia.es/vcab/rest/fechas/paso/";
-var getHoras 		= "http://ws199.juntadeandalucia.es/vcab/rest/horario/";
-var getGPS			= "http://ws199.juntadeandalucia.es/vcab/rest/gps/";
+var getHermandades 	= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/hermandades/";
+var getDias 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/fechas/";
+var getRutas 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/ruta/";
+var getFechas 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/fechas/";
+var getCamino 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/camino/";
+var getPasos 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/pasos/";
+var getFechasPaso 	= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/fechas/paso/";
+var getHoras 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/horario/";
+var getGPS			= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/gps/";
 //var getGPS			= "http://www.mocky.io/v2/56deaf14110000a303979e5c/";
-var getColor 		= "http://ws199.juntadeandalucia.es/vcab/rest/color/"; //NO USADO
+var getColor 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/color/"; //NO USADO
 /**/
 //var bboxContext = [96388,3959795,621889,4299792];
 var bboxContext = [395827,4210307,411397,4225578];
