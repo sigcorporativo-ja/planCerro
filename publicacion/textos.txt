@@ -1,32 +1,30 @@
 Título (30)
 ===========
-Plan Romero 2017
+Plan Cerro
 
 Descripción breve (80)
 ======================
-Recorrido de las Hermandades del Rocío 2017, posición real de 60 de ellas.
+Caminos de las cofradías hacia el Cerro, posición de las carretas y cofradía matriz.
 
 
 Descripción completa (4000)
 ===========================
-El Plan Romero 2017 es un plan de emergencia ante posibles riesgos por la concentración de personas y desplazamientos producidos con motivo de la Romería de El Rocío.
+El Plan Cerro es un plan de emergencia ante posibles riesgos por la concentración de personas y desplazamientos producidos con motivo de la Romería de Virgen de la Cabeza.
 
-Por ello, se ha desarrollado esta APP para la consulta de toda la información de las hermandades, con datos de los itinerarios que recorren, lugares de paso, hermandades en peregrinación y seguimiento en tiempo real a partir de dispositivos GPS.
+Por ello, se ha desarrollado esta APP para la consulta de toda la información de los caminos, con datos de los itinerarios que recorren, lugares de paso y seguimiento en tiempo real a partir de dispositivos GPS. También es posible descargar un documento con toda la información relevante de la Romería y un plano con indicaciones del Cerro.
 
-Las hermandades con seguimiento GPS son, en orden alfabético:
-
-Albaida del Aljarafe, Arcos de la Frontera, Ayamonte, Bonares, Bormujos, Cádiz, Camas, Carmona, Cerro del Águila, Chiclana, Chipiona, Chucena, Córdoba, Coria del Río, Dos Hermanas, Écija, El Puerto de Santa María, Emigrantes de Huelva, Escacena del Campo, Espartinas, Estapona, Gibraleón, Gines, Granada, Huelva, Isla Cristina, Jerez de la Frontera, La Línea de la Concepción, La Puebla del Río, Lebrija, Los Palacios y Villafranca, Macarena, Mairena del Aljarafe, Málaga, Málaga la Caleta, Manzanilla, Niebla, Olivares, Osuna, Palos de la Frontera, Puente Genil, Puerto Real, Punta Umbría, Rota, San Fernando, San Juan de Aznalfarache, San Juan del Puerto, Sanlúcar de Barrameda, Santiponce, Sevilla, Sevilla Sur, Tomares, Triana, Trigueros, Umbrete, Utrera, Valencina de la Concepción, Valverde del Camino, Villalba del Alcor, Villarrasa
+Se realiza un seguimiento de las carretas y la cofradía matriz, con seguimiento del inicio, centro y final de las carretas que salen desde Andújar y Marmolejo.
 
 Aplicación desarrollada por la Dirección General de Política Digital, Consejería de Hacienda y Administración Pública. Junta de Andalucía.
 
 Etiquetas
 ===========
-romería, rocío, hermandad, camino, recorrido
+romería, Virgen de la Cabeza, cofradía, camino, recorrido, carretas, matriz, Andújar, Marmolejo, Cerro
 
 Notas de versión
 =================
-- Actualización de datos al 2017
-- Seguimiento de 60 hermandades en tiempo real
+- Actualización de datos al 2018
+- Seguimiento de carretas y cofradía matriz en tiempo real
 
 Sitio web
 =========
@@ -34,4 +32,4 @@ http://juntadeandalucia.es/justiciaeinterior
 
 Correo electrónico
 ==================
-app-planromero.cji@juntadeandalucia.es
+@juntadeandalucia.es
