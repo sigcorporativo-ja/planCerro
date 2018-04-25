@@ -4,7 +4,7 @@ Plan Cerro 2018
 
 Descripción breve (80)
 ======================
-Caminos de las cofradías hacia el Cerro, posición de las carretas y cofradía matriz.
+Caminos de las cofradías al Cerro, posición de las carretas y cofradía matriz.
 
 
 Descripción completa (4000)
