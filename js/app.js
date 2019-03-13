@@ -180,7 +180,7 @@ function cargarFechasHermandad(idHermandad){
 function pintarRuta(hermandad, dia){
 	if (mapajsRuta===undefined){
 		mapajsRuta = M.map({
-			controls:["location"],
+			controls:["location", "scale", "layerswitcher"],
 			container:"mapRuta",
 			wmcfiles: ['romero_mapa','romero_satelite']
 		});
@@ -280,7 +280,7 @@ function pintarMovimientoDiario(hermandad, dia, jornada){
 	//if (mapajsDiario===undefined){
 	(mapajsDiario && mapajsDiario.destroy());
 		mapajsDiario = M.map({
-			controls:["location"],
+			controls:["location", "scale", "layerswitcher"],
 			container:"mapDiario",
 			wmcfiles: ['romero_mapa','romero_satelite']
 		});
@@ -335,7 +335,7 @@ function pintarToponimo(data){
 	if (mapajsTopo===undefined){
 
 		mapajsTopo = M.map({
-			controls:["location"],
+			controls:["location", "scale", "layerswitcher"],
 			zoom: zoomToPoint,
 			center: data.topoX+","+data.topoY+"*true",
 			container:"mapToponimo",
@@ -385,7 +385,7 @@ function pintarGPS(hermandad){
 
 	if (mapajsGPS===undefined){
 		mapajsGPS = M.map({
-				controls:["location"],
+				controls:["location", "scale", "layerswitcher"],
 				container:"mapGPS",
 				bbox: bbox[0]+","+bbox[1]+","+bbox[2]+","+bbox[3],
 				wmcfiles: ['romero_mapa','romero_satelite']
