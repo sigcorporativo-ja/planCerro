@@ -9,6 +9,7 @@ var getPasos 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/pas
 var getFechasPaso 	= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/fechas/paso/";
 var getHoras 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/horario/";
 var getGPS			= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/gps/";
+var getAvisos	    = "https://my-json-server.typicode.com/jgleal/jsonserver/avisos/";
 //var getGPS			= "http://www.mocky.io/v2/56deaf14110000a303979e5c/";
 var getColor 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/color/"; //NO USADO
 /**/

@@ -126,3 +126,38 @@ div.with_background {
   visibility: visible!important;
 }
 /********************/
+
+/* Avisos */
+.lista-avisos{
+  border: 3px black dashed;
+  border-radius: 3px;
+  padding: 10px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.severity-high{
+  background-color: red;
+}
+.severity-mid{
+  background-color: orange;
+}
+.severity-low{
+  background-color: green;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+/*  */

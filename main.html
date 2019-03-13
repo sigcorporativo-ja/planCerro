@@ -38,6 +38,10 @@
       <a href="javascript:showInfo()" class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-right ui-icon-info ui-btn-icon-notext"></a>
     </div>
     <div role="main" class="ui-content with_background">
+      <div class="lista-avisos severity-high">
+          Incendio en paraje <a href="#avisos">(+ avisos)</a>
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      </div>
       <ul data-role="listview" data-inset="true">
         <li data-role="list-divider">Caminos</li>
         <li data-icon="navigation">
@@ -187,13 +191,33 @@
     <a href="#camino" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-alt-icon ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a> <!--ui-corner-all-->
     <a href="#home" class="ui-btn-home ui-btn ui-btn-inline ui-mini ui-btn-icon-home ui-alt-icon ui-nodisc-icon ui-icon-home ui-btn-icon-notext"></a> <!--ui-corner-all-->
     <h3></h3>
-    <p class="subheader"</p>
+    <p class="subheader"></p>
     </div>
     <div role="main" class="ui-content">
       <div id="mapToponimo" class="m-mapea-container"></div>
     </div><!--content-->
 
   </div><!--fin toponimo-->
+
+  <div id="avisos" data-role="page">
+    <div data-role="header" data-position="fixed">
+      <a href="#home" class="ui-btn-home ui-btn ui-btn-inline ui-mini ui-btn-icon-home ui-alt-icon ui-nodisc-icon ui-icon-home ui-btn-icon-notext"></a> <!--ui-corner-all-->
+      <h3>Avisos</h3>
+      <p class="subheader"></p>
+      </div>
+      <div role="main" class="ui-content with_background">
+          <div class="lista-avisos severity-high">
+              Ejemplo 1
+          </div>
+          <div class="lista-avisos severity-mid">
+              Ejemplo 2
+          </div>
+          <div class="lista-avisos severity-low">
+              Ejemplo 3
+          </div>
+      </div><!--content-->
+  
+    </div>
 </div>
 
 </body>
