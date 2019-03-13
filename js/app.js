@@ -507,9 +507,9 @@ function bindEvents(){
 			}
 		}
 	});
-	$("#descargaDoc").click(function () {
+	$("#descargaNormas").click(function () {
 		openUrlExternal(urlPDF);
-	});	
+	});
 
 }
 
