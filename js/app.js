@@ -436,7 +436,10 @@ function bindEvents(){
 		  			mapajsRuta.getMapImpl().updateSize();
 						if (vectorSourceGPS.getFeatures().length<=0) showDialog(noGPS,'ERROR','error');
 	  			break;
-	  			case 'toponimo':
+					case 'toponimo':
+					  let coordsGeo = transformar([data.options.topoX,data.options.topoY]);
+						let geolink = getGeoLink(coordsGeo,data.options.topoNombre);
+						$("#iralli a").attr("onclick",`javascript:openUrlExternal('${geolink}');`);
 		  			pintarToponimo(data.options);
   	  			mapajsTopo.getMapImpl().updateSize();
 						if (vectorSourceGPS.getFeatures().length<=0) showDialog(noGPS,'ERROR','error');
@@ -565,4 +568,20 @@ function showInfo(){
 function showError(e){
 	errTxt = errMsg[errCode.indexOf(e.codigo)] || e.mensaje;
 	showDialog(errTxt,'ERROR','error');
+}
+function transformar(arrCoords) {
+	var epsg4326 = proj4.defs('EPSG:4326');
+	var epsg25830 = proj4.defs('EPSG:25830');
+	coordTrans = proj4(epsg25830, epsg4326, arrCoords);
+	return coordTrans[1] + "," + coordTrans[0];
+}
+
+function getGeoLink(coords, label) {
+	if (window.isApp) {
+		if (window.iOS)
+			return `maps://?ll=${coords}&q=${label}`;
+		else
+			return `geo:${coords}?q=${coords}(${label})`;
+	} else
+		return `http://maps.google.com?q=${coords}`;
 }
