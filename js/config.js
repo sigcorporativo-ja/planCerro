@@ -27,9 +27,9 @@ var noPosicion 		= "No existe posición para la selección";
 var errInesperado 	= "Ha ocurrido un error inesperado. Vuelva a ejecutar la aplicación";
 var errCode = [2];
 var errMsg = ["No es posible visualizar la ruta. El desplazamiento no se realiza en carreta"];
-var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan del Cerro 2018<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='#' onclick='javascript:openInfo();'>Consejería de Justicia e Interior</a>";
+var htmlAcercade	= "<img src='img/logoJunta.png'/><br>Plan del Cerro<br>Versión 1.0.0<br><br>Junta de Andalucía<br><a href='#' onclick='javascript:openInfo();'>Consejería de Presidencia, Administración Pública e Interior</a>";
 function openInfo(){
-	cordova.InAppBrowser.open('http://www.juntadeandalucia.es/organismos/justiciaeinterior.html','_system');
+	cordova.InAppBrowser.open('https://www.juntadeandalucia.es/organismos/presidenciaadministracionpublicaeinterior.html','_system');
 }
 window.isApp 	= /^(?!HTTP)/.test(document.URL.toUpperCase()); //
 window.iOS 		= /IPAD|IPHONE|IPOD/.test(navigator.userAgent.toUpperCase());
