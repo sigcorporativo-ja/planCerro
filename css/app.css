@@ -109,7 +109,7 @@ div.with_background {
     color: white;
 }
 /***elimino estilos de seleccionado y activo ya que no interesan****/
-.ui-btn:hover,
+.ui-btn:not(.lista-avisos):hover,
 .ui-btn:active,
 .ui-focus{
     background-color: #f6f6f6 !important;
@@ -128,27 +128,28 @@ div.with_background {
 /********************/
 
 /* Avisos */
-.lista-avisos{
-  border: 3px black dashed;
-  border-radius: 3px;
-  padding: 10px;
-  color: white;
-  margin-bottom: 10px;
+.lista-avisos {
+  border: 3px black dashed!important;
+  border-radius: 3px!important;
+  color: white!important;
+  padding: 5px!important;
 }
-
+#avisos .lista-avisos { 
+  margin: 1em!important;
+}
 .severity-high{
-  background-color: red;
+  background-color: red!important;
 }
 .severity-mid{
-  background-color: orange;
+  background-color: orange!important;
 }
 .severity-low{
-  background-color: green;
+  background-color: green!important;
 }
 
 .closebtn {
   margin-left: 15px;
-  color: white;
+  color: #00853e;
   font-weight: bold;
   float: right;
   font-size: 22px;

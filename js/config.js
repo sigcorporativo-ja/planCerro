@@ -17,6 +17,7 @@ var getColor 		= "http://www.juntadeandalucia.es/justiciaeinterior/vcab/rest/col
 var bboxContext = [395827,4210307,411397,4225578];
 var zoomToPoint = 12;
 var updateGPS = 150; //en segundos
+var intervalAvisos = 15; //en segundos
 var timeout = 15; //en segundos. Se usa para detectar si hay algún problema con los servicios no controlado
 const urlPDF = "http://www.juntadeandalucia.es/justiciaeinterior/imgplan/InformaPlanCerro.pdf";
 M.proxy(false);
