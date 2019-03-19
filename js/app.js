@@ -444,8 +444,7 @@ function updateAvisos() {
 			return a.prioridad - b.prioridad
 		});
 		let avisoHome = $("#home > div.ui-content > a.lista-avisos");
-		avisos.length > 0 ? avisoHome.show() :
-			avisoHome.hide();
+		avisos.length > 0 ? avisoHome.css( "display", "block" ) : avisoHome.hide();
 		let page = $("#avisos > div.ui-content");
 		page.empty();
 		for (let i = 0; i < avisos.length; i++) {

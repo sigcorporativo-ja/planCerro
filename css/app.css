@@ -128,23 +128,33 @@ div.with_background {
 /********************/
 
 /* Avisos */
+#home .lista-avisos{
+  display: none
+}
 .lista-avisos {
   border: 3px black dashed!important;
   border-radius: 3px!important;
   color: white!important;
   padding: 5px!important;
 }
+
 #avisos .lista-avisos { 
   margin: 1em!important;
 }
 .severity-high{
-  background-color: red!important;
+  background-color: #f8d7da!important;
+  border-color: #eeb6bc!important;
+  color: #721c24!important;
 }
 .severity-mid{
-  background-color: orange!important;
+  background-color: #fff3cd!important;
+  border-color: #fae29c!important;
+  color: #856404!important
 }
 .severity-low{
-  background-color: green!important;
+  background-color: #d4edda!important;
+  border-color: #a7e7b6!important;
+  color: #155724!important;
 }
 
 .closebtn {
