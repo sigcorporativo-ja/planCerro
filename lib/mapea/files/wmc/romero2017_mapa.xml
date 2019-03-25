@@ -163,7 +163,7 @@
 		<!--  ******   Plan del Cerro 2018    ******  -->
 		<Layer hidden="0" queryable="0">
 			<Server service="OGC:WMS" title="Andalucía" version="1.1.1">
-				<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.juntadeandalucia.es/justiciaeinterior/IDE/wms?"/>
+				<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ws199.juntadeandalucia.es/VirgenCabeza/wms?"/>
 			</Server>
 			<Name>VirgenCabeza:VirgenCabeza</Name>
 			<Title>Plan del Cerro</Title>
@@ -186,8 +186,5 @@
 			<sld:MinScaleDenominator xmlns:sld="http://www.opengis.net/sld">730.7813</sld:MinScaleDenominator>
 			<sld:MaxScaleDenominator xmlns:sld="http://www.opengis.net/sld">188000</sld:MaxScaleDenominator>
 		</Layer>
-
-	
-
 	</LayerList>
 </ViewContext>

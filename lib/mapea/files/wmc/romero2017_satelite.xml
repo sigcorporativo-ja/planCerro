@@ -192,7 +192,7 @@
 		<!--  ******   Plan del Cerro 2018    ******  -->
 		<Layer hidden="0" queryable="0">
 			<Server service="OGC:WMS" title="Andalucía" version="1.1.1">
-				<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.juntadeandalucia.es/justiciaeinterior/IDE/wms?"/>
+				<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://ws199.juntadeandalucia.es/VirgenCabeza/wms?"/>
 			</Server>
 			<Name>VirgenCabeza:VirgenCabeza</Name>
 			<Title>Plan del Cerro</Title>
