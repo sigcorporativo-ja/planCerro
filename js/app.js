@@ -444,7 +444,7 @@ function updateAvisos() {
 			return a.prioridad - b.prioridad
 		});
 		let avisoHome = $("#home > div.ui-content > a.lista-avisos");
-		avisos.length > 0 ? avisoHome.css( "display", "block" ) : avisoHome.hide();
+		avisos.length > 0 ? avisoHome.css("display", "block") : avisoHome.hide();
 		let page = $("#avisos > div.ui-content");
 		page.empty();
 		for (let i = 0; i < avisos.length; i++) {
@@ -627,16 +627,17 @@ function bindEvents() {
 			}
 		}
 	});
-	$("#descargaNormas").click(function () {
-		openUrlExternal(urlPDF);
-	});
 }
 
 function openUrlExternal(url) {
-	//_system abre siempre en la misma pestaña del navegador 
-	// para evitar que se abra multiples veces lo mismo.
-	// Cambiar a _blank si se quieren abrir multiples pestañas.
-	cordova.InAppBrowser.open(url, '_system');
+	if (window.isApp) {
+		//_system abre siempre en la misma pestaña del navegador 
+		// para evitar que se abra multiples veces lo mismo.
+		// Cambiar a _blank si se quieren abrir multiples pestañas.
+		cordova.InAppBrowser.open(url, '_system');
+	} else
+		window.open(url);
+
 }
 
 $(document).ready(function () {
@@ -668,8 +669,19 @@ function onDeviceReady() {
 			}, 2000);
 		}
 	});
+	generarDocs();
 	bindEvents();
 };
+
+function generarDocs() {
+	let pageDocs = $("#docs .ui-content")
+	docsPDF.forEach(doc => {
+		let domDoc = $("<a>").addClass("ui-btn ui-icon-arrow-d ui-btn-icon-right");
+		domDoc.attr('href', `javascript:openUrlExternal('${doc.url}')`);
+		domDoc.text(doc.nombre);
+		pageDocs.append(domDoc);
+	});
+}
 
 function showDialog(message, title, severity) {
 	if (message && message != null && message != '') {

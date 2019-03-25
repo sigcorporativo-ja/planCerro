@@ -19,7 +19,32 @@ var zoomToPoint = 12;
 var updateGPS = 150; //en segundos
 var intervalAvisos = 15; //en segundos
 var timeout = 15; //en segundos. Se usa para detectar si hay algún problema con los servicios no controlado
-const urlPDF = "http://www.juntadeandalucia.es/justiciaeinterior/imgplan/InformaPlanCerro.pdf";
+const docsPDF = [
+	{
+		nombre: "Normas de regulación y ordenación del tráfico",
+		url: "https://ws199.juntadeandalucia.es/imgplan/NormaTraficoPlanCerro.pdf"
+	},
+	{
+		nombre: "Programa de la Romería",
+		url: "https://ws199.juntadeandalucia.es/imgplan/ProgramaPlanCerro.pdf"
+	},
+	{
+		nombre: "Normas Andújar",
+		url: "https://ws199.juntadeandalucia.es/imgplan/NormaAndujarPlanCerro.pdf"
+	},
+	{
+		nombre: "Normas Marmolejo",
+		url: "https://ws199.juntadeandalucia.es/imgplan/NormaMarmolejoPlanCerro.pdf"
+	},
+	{
+		nombre: "Recomendaciones en materia de salud para romeros, carretas y caballistas",
+		url: "https://ws199.juntadeandalucia.es/imgplan/RecomendacionesPlanCerro.pdf"
+	},
+	{
+		nombre: "Teléfonos de interés",
+		url: "https://ws199.juntadeandalucia.es/imgplan/TelefInteresPlanCerro.pdf"
+	}
+];
 M.proxy(false);
 var attrNotShow = [ "the_geom", "geom", "geometry", "_version_", "solrid", "keywords", "equipamiento"];
 /*********************** MENSAJES DE ERROR NO CONTROLADO EN LOS SERVICIOS **********************/
