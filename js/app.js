@@ -114,7 +114,8 @@ function cargarCamino(idHermandad) {
 				"topoHermandad": $("#dropHermandadCamino option:selected").text()
 			};
 
-			li = $("<li><a href='javascript:$.mobile.changePage(\"#toponimo\"," + JSON.stringify(toponimo) + ")'>" + topoNombre.replace('Paso', 'Paso por') + "</a><p class='ui-li-aside'><strong>" + texto_fecha[0] + "</strong></p></li>");
+			// li = $("<li><a href='javascript:$.mobile.changePage(\"#toponimo\"," + JSON.stringify(toponimo) + ")'>" + topoNombre.replace('Paso', 'Paso por') + "</a><p class='ui-li-aside'><strong>" + texto_fecha[0] + "</strong></p></li>");
+			li = $("<li>" + topoNombre.replace('Paso', 'Paso por') + "<p class='ui-li-aside'><strong> Horario previsto: " + texto_fecha[0] + "</strong></p></li>");
 			ul.append(li);
 			listCamino.append(div);
 		});
@@ -286,8 +287,9 @@ function getLayerRuta(vectorSource) {
 		style: function (feature, resolution) {
 			return [new ol.style.Style({
 				stroke: new ol.style.Stroke({
-					color: feature.get('color'),
-					width: 5
+				color: '#84fffc',
+				width: 8,
+				lineCap: 'butt'
 				})
 				/*,
 								text: new ol.style.Text({
@@ -306,7 +308,12 @@ function getLayerRuta(vectorSource) {
 						var coordinates = feature.getGeometry().getCoordinates()[0];
 						console.log(coordinates);
 					}*/
-			})];
+			}),
+				new ol.style.Style({
+				stroke: new ol.style.Stroke({
+				color: feature.get('color'),
+				width: 4
+			})})];
 		}
 	});
 }
@@ -438,9 +445,11 @@ function updateLastPos() {
 }
 
 function updateAvisos() {
-	filtro = {};
+	filtro = {
+		tiempo: 0
+	};
 	return getInfo(getAvisos, filtro, false).done(function (data) {
-		let avisos = data.sort((a, b) => {
+		let avisos = data.avisos.sort((a, b) => {
 			return a.prioridad - b.prioridad
 		});
 		let avisoHome = $("#home > div.ui-content > a.lista-avisos");
@@ -463,7 +472,7 @@ function updateAvisos() {
 			page.append(divAviso);
 		}
 	}).fail(function (e) {
-		showError(e.error);;
+		console.log(e.error.mensaje);
 	});
 }
 

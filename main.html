@@ -38,30 +38,30 @@
       <a href="javascript:showInfo()" class="ui-btn-right ui-btn ui-btn-inline ui-btn-icon-right ui-icon-info ui-btn-icon-notext"></a>
     </div>
     <div role="main" class="ui-content with_background">
-      <a class="ui-btn lista-avisos" href="#avisos">Consulta de información importante</a>
+      <a class="ui-btn lista-avisos" href="#avisos">Consulta de información importante. Avisos</a>
+      <a class="ui-btn ui-icon-info ui-btn-icon-right" href="#docs">Información General</a>
       <!-- <span class="closebtn" onclick="this.style.display='none';">&times;</span> -->
       <ul data-role="listview" data-inset="true">
         <li data-role="list-divider">Caminos</li>
         <li data-icon="navigation">
-          <a href="#ruta">Rutas</a>
+          <a href="#ruta">Mapa de los caminos</a>
         </li>
         <li data-icon="eye">
-          <a href="#camino">Itinerarios</a>
+          <a href="#camino">Itinerarios. Horarios de paso</a>
         </li>
         <li data-icon="location">
-          <a href="#gps">Localización GPS</a>
+          <a href="#gps">Localización en tiempo real (GPS)</a>
         </li>
       </ul>
       <!--<a class="ui-btn ui-icon-calendar ui-btn-icon-right" href="#diario">Movimiento diario</a>-->
-      <a class="ui-btn ui-icon-clock ui-btn-icon-right" href="#horas">Horarios de paso</a>
-      <a class="ui-btn ui-icon-grid ui-btn-icon-right" href="#docs">Documentación</a>
+      <!-- <a class="ui-btn ui-icon-clock ui-btn-icon-right" href="#horas">Horarios de paso</a> -->
     </div>
   </div>
   <!-- Page: ruta  -->
   <div id="ruta" data-role="page">
     <div data-role="header" data-position="fixed">
       <a href="#home" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-alt-icon ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a> <!--ui-corner-all-->
-      <h1>Rutas</h1>
+      <h1>Mapa de los caminos</h1>
       <div data-role="navbar">
         <ul>
 
@@ -84,7 +84,7 @@
     <div id="camino" data-role="page">
       <div data-role="header" data-position="fixed">
         <a href="#home" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-alt-icon ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a> <!--ui-corner-all-->
-        <h3>Itinerario</h3>
+        <h3>Itinerarios. Horarios de paso</h3>
         <div data-role="navbar">
           <ul>
             <li>
@@ -106,7 +106,7 @@
   <div id="gps" data-role="page">
     <div data-role="header" data-position="fixed">
       <a href="#home" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-alt-icon ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext"></a> <!--ui-corner-all-->
-      <h3>Localización GPS</h3>
+      <h3>Localización en tiempo real (GPS)</h3>
       <div data-role="navbar">
         <ul>
           <li>
@@ -211,7 +211,7 @@
 <div id="docs" data-role="page">
   <div data-role="header" data-position="fixed">
     <a href="#home" class="ui-btn-home ui-btn ui-btn-inline ui-mini ui-btn-icon-home ui-alt-icon ui-nodisc-icon ui-icon-home ui-btn-icon-notext"></a> <!--ui-corner-all-->
-    <h3>Documentación de referencia</h3>
+    <h3>Información general</h3>
     <p class="subheader"></p>
     </div>
     <div role="main" class="ui-content with_background">
