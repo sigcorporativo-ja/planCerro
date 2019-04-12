@@ -38,7 +38,7 @@ const docsPDF = [
 		url: "https://ws199.juntadeandalucia.es/imgplan/NormaMarmolejoPlanCerro.pdf"
 	},
 	{
-		nombre: "Recomendaciones en materia de salud para romeros, carretas y caballistas",
+		nombre: "Recomendaciones para prevenir riesgos",
 		url: "https://ws199.juntadeandalucia.es/imgplan/RecomendacionesPlanCerro.pdf"
 	},
 	{
