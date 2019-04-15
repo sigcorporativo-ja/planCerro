@@ -15,7 +15,7 @@
 	<access origin="geo:*" launch-external="yes" />
 	<access origin="mailto:*" launch-external="yes" />
 
-	<preference name="android-minSdkVersion" value="16" />
+	<preference name="android-minSdkVersion" value="23" />
 	<preference name="android-targetSdkVersion" value="25" />
 	<preference name="SuppressesIncrementalRendering" value="true" /> <!-- aumenta rendimiento en iOS -->
 	<feature name="StatusBar">
