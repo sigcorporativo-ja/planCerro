@@ -1,6 +1,6 @@
-Título (30)
+﻿Título (30)
 ===========
-Plan Cerro 2018
+Plan Cerro
 
 Descripción breve (80)
 ======================
@@ -21,10 +21,16 @@ Etiquetas
 ===========
 romería, Virgen de la Cabeza, cofradía, camino, recorrido, carretas, matriz, Andújar, Marmolejo, Cerro
 
-Notas de versión
-=================
+Notas de versión 2018
+=====================
 - Actualización de datos al 2018
 - Seguimiento de carretas y cofradía matriz en tiempo real
+
+Notas de versión 2019
+=====================
+- Actualización de datos al 2019
+- Reestructuración de interfaz
+- Nueva funcionalidad de avisos
 
 Sitio web
 =========
