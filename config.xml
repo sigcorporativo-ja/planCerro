@@ -17,10 +17,7 @@
 
 	<preference name="android-minSdkVersion" value="23" />
 	<preference name="android-targetSdkVersion" value="26" />
-	<preference name="SuppressesIncrementalRendering" value="true" /> <!-- aumenta rendimiento en iOS -->
-	<feature name="StatusBar">
-		<param name="ios-package" value="CDVStatusBar" onload="true" />
-	</feature>
+	
 
 	<!-- PERMISOS -->
 	<preference name="permissions" value="none" />
@@ -32,13 +29,7 @@
 	<plugin name="cordova-plugin-geolocation" source="npm" version="4.0.1" />
 	<plugin name="cordova-plugin-inappbrowser" source="npm" version="2.0.1" />
 	<plugin name="cordova-plugin-splashscreen" source="npm" version="5.0.1" />
-	<plugin name="cordova-plugin-statusbar" source="npm" version="2.4.1" />
-		<gap:config-file platform="ios" parent="UIStatusBarHidden" mode="add">
-			<true/>
-		</gap:config-file>
-		<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" mode="add">
-			<false/>
-		</gap:config-file>
+	<plugin name="cordova-plugin-statusbar" source="npm" version="2.4.1" />		
 	<plugin name="cordova-plugin-whitelist" source="npm" version="1.3.3" />
 	<!--<plugin name="cordova.plugins.diagnostic" source="npm" version="4.0.1" />-->
 
@@ -49,8 +40,10 @@
 	<preference name="SplashScreenDelay" value="8000" />
 	<preference name="FadeSplashScreen" value="false" />
 	<preference name="DisallowOverscroll" value="true" />
+	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="SuppressesLongPressGesture" value="true" />
 	<preference name="phonegap-version" value="cli-8.1.1" />
+
 	<platform name="android">
 		<preference name="android-installLocation" value="auto" />
 		<icon src="resources/android/icon/drawable-xxxhdpi.png" density="xxxhdpi" />
@@ -74,6 +67,15 @@
 	</platform>
 	<platform name="ios">
 		<preference name="target-device" value="handset" /> <!-- solo iphone->no ipad -->
+		<edit-config target="UIStatusBarHidden" file="*-Info.plist" mode="merge">
+			<true/>
+		</edit-config>
+		<edit-config target="UIViewControllerBasedStatusBarAppearance" file="*-Info.plist" mode="merge">
+			<false/>
+		</edit-config>
+		<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+			<string>Se necesita acceso a la ubicación del dispositivo</string>
+		</edit-config>
         <icon src="resources/ios/icon/icon.png" width="57" height="57"/>
         <icon src="resources/ios/icon/icon@2x.png" width="114" height="114"/>
         <icon src="resources/ios/icon/icon-40.png" width="40" height="40"/>
