@@ -63,6 +63,7 @@ body,
   margin: 0;
   padding: 0;
   background-color: white;
+  padding-top: env(safe-area-inset-top); /* iOS 11.2 */
 }
 
 div.with_background {
