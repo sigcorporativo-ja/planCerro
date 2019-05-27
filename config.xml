@@ -97,7 +97,9 @@
         <splash src="resources/ios/splash/Default-736h.png" width="1242" height="2208"/>
         <splash src="resources/ios/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
         <splash src="resources/ios/splash/Default@2x.png" width="640" height="960"/>
-        <splash src="resources/ios/splash/Default.png" width="320" height="480"/>        
+        <splash src="resources/ios/splash/Default.png" width="320" height="480"/>
+		<splash src="resources/ios/splash/Default-2436h.png" width="1125" height="2436"/>
+		<splash src="resources/ios/splash/Default-Landscape-2436h.png" width="2436" height="1125" />	        
     </platform>
 
 </widget>
