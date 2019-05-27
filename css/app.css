@@ -59,17 +59,22 @@ a:visited    {color:#3f3f3e; font-weight: bold}
 html,
 body,
 .ui-page {
-  height: 100%;
+  height: calc(100% - env(safe-area-inset-bottom));
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: white;  
+}
+.ui-header {
   padding-top: env(safe-area-inset-top);
+}
+.ui-header .ui-btn{
+  margin-top: env(safe-area-inset-top);
 }
 
 div.with_background {
   height: inherit;
   background: url("../img/background17v1.jpg") no-repeat center bottom;
-  background-size: 100%, cover;
+  background-size: 100%, cover;  
 }
 
 .ui-page,
