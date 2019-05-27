@@ -42,6 +42,7 @@
 	<preference name="DisallowOverscroll" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="SuppressesLongPressGesture" value="true" />
+	<preference name="Orientation" value="portrait" />
 	<preference name="phonegap-version" value="cli-8.1.1" />
 
 	<platform name="android">
@@ -52,12 +53,6 @@
 		<icon src="resources/android/icon/drawable-hdpi.png" density="hdpi" />
 		<icon src="resources/android/icon/drawable-mdpi.png" density="mdpi" />
 		<icon src="resources/android/icon/drawable-ldpi.png" density="ldpi" />		
-		<splash src="resources/android/splash/drawable-land-ldpi.png" density="land-ldpi" />
-		<splash src="resources/android/splash/drawable-land-mdpi.png" density="land-mdpi" />
-		<splash src="resources/android/splash/drawable-land-hdpi.png" density="land-hdpi" />
-		<splash src="resources/android/splash/drawable-land-xhdpi.png" density="land-xhdpi" />
-		<splash src="resources/android/splash/drawable-land-xxhdpi.png" density="land-xxhdpi" />
-		<splash src="resources/android/splash/drawable-land-xxxhdpi.png" density="land-xxxhdpi" />
 		<splash src="resources/android/splash/drawable-port-ldpi.png" density="port-ldpi" />
 		<splash src="resources/android/splash/drawable-port-mdpi.png" density="port-mdpi" />
 		<splash src="resources/android/splash/drawable-port-hdpi.png" density="port-hdpi" />
@@ -94,12 +89,12 @@
         <icon src="resources/ios/icon/icon-small@3x.png" width="87" height="87"/>
         <splash src="resources/ios/splash/Default-568h@2x.png" width="640" height="1136"/>
         <splash src="resources/ios/splash/Default-667h.png" width="750" height="1334"/>
-        <splash src="resources/ios/splash/Default-736h.png" width="1242" height="2208"/>
-        <splash src="resources/ios/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
+        <splash src="resources/ios/splash/Default-736h.png" width="1242" height="2208"/>        
         <splash src="resources/ios/splash/Default@2x.png" width="640" height="960"/>
         <splash src="resources/ios/splash/Default.png" width="320" height="480"/>
+		<splash src="resources/ios/splash/Default-1792h.png" width="828" height="1792"/>
 		<splash src="resources/ios/splash/Default-2436h.png" width="1125" height="2436"/>
-		<splash src="resources/ios/splash/Default-Landscape-2436h.png" width="2436" height="1125" />	        
+		<splash src="resources/ios/splash/Default-2688h.png" width="1242" height="2688"/>		
     </platform>
 
 </widget>
