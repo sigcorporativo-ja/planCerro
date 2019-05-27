@@ -59,15 +59,18 @@ a:visited    {color:#3f3f3e; font-weight: bold}
 html,
 body,
 .ui-page {
-  height: calc(100% - env(safe-area-inset-bottom))!important;
+  height: 100%;
   margin: 0;
   padding: 0;
   background-color: white;  
 }
+.ui-page:not(.pagemap) {
+  height: calc(100% - env(safe-area-inset-bottom))!important;
+}
 .ui-header {
   padding-top: env(safe-area-inset-top)!important;
 }
-.ui-header .ui-btn{
+.ui-header .ui-btn-icon-notext{
   margin-top: env(safe-area-inset-top)!important;
 }
 
